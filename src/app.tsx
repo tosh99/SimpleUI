@@ -9,11 +9,16 @@ import { SSelect } from './base-components/s-select/s-select';
 import { STextarea } from './base-components/s-textarea/s-textarea';
 import { SButton } from './base-components/s-button/s-button';
 import { SBadge } from './base-components/s-badge/s-badge';
+import { SAccordion } from './base-components/s-accordion/s-accordion';
+import { FaPlus, FaUser } from 'react-icons/fa6';
 
+const options = [
+    { label: 'Opt 1', value: 1 },
+    { label: 'Opt 2', value: 2 },
+];
 
-const options = [{ label: 'Opt 1', value: 1 }, { label: 'Opt 2', value: 2 }]
 export function App() {
-    const [opt, set_opt] = useState(options[0])
+    const [opt, set_opt] = useState(options[0]);
 
     return (
         <>
@@ -66,6 +71,27 @@ export function App() {
                 </SFlex>
             </SPageSection>
 
+            <SPageSection disableAnimation height={'auto'}>
+                <SFlex direction={'column'}>
+                    <p>Accordion Example</p>
+                    <SAccordion
+                        accordionBase={
+                            <SFlex justify={'space-between'}>
+                                <p>Accordion</p>
+                                <FaPlus />
+                            </SFlex>
+                        }
+                        accordionContent={
+                            <SFlex direction={'column'}>
+                                <p>Row 1</p>
+                                <p>Row 2</p>
+                                <p>Row 3</p>
+                                <p>Row 4</p>
+                            </SFlex>
+                        }
+                    />
+                </SFlex>
+            </SPageSection>
 
             <SPageSection>
                 <h1>H1</h1>
@@ -73,8 +99,7 @@ export function App() {
                     autoPlay={true}
                     items={[1, 2, 3, 1, 2, 3, 1, 2, 3]}
                     renderItem={(item) => (
-                        <SFlex align={'center'} justify={'center'} height={300} width={'100%'}
-                               style={{ border: '1px solid red' }}>
+                        <SFlex align={'center'} justify={'center'} height={300} width={'100%'} style={{ border: '1px solid red' }}>
                             {item}
                             <br />
                         </SFlex>
@@ -98,19 +123,13 @@ export function App() {
                 <h1>H3</h1>
                 <SMarquee>
                     <SImage src={'https://placehold.co/512'} width={256} height={256} style={{ margin: '0 20px' }} />
-                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'initial'}
-                            style={{ margin: '0 20px' }} />
-                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'}
-                            style={{ margin: '0 20px' }} />
-                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'}
-                            style={{ margin: '0 20px' }} />
-                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'}
-                            style={{ margin: '0 20px' }} />
-                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'}
-                            style={{ margin: '0 20px' }} />
+                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'initial'} style={{ margin: '0 20px' }} />
+                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'} style={{ margin: '0 20px' }} />
+                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'} style={{ margin: '0 20px' }} />
+                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'} style={{ margin: '0 20px' }} />
+                    <SImage src={'https://placehold.co/512'} width={256} height={256} backgroundSize={'contain'} style={{ margin: '0 20px' }} />
                 </SMarquee>
             </SPageSection>
-
         </>
     );
 }
