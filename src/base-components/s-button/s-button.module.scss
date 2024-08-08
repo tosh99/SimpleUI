@@ -1,0 +1,60 @@
+.button {
+    transition: 0.3s;
+    pointer-events: auto;
+    cursor: pointer;
+
+    font-family: var(--BtnFontFamily), sans-serif;
+    height: var(--GInputHeight);
+    border-radius: var(--BtnBorderRadius);
+    padding: var(--BtnPadding);
+
+    color: var(--BtnActiveFontColor);
+    background: var(--BtnActiveBgColor);
+    border: var(--BtnActiveBorder);
+
+
+    .buttonText {
+        font-size: var(--BtnFontSize);
+    }
+
+    .iconLeft, .iconRight {
+        font-size: var(--BtnFontSize);
+    }
+}
+
+.button:hover {
+    background: var(--BtnActiveHoverBgColor);
+    transition: 0.3s;
+}
+
+.simpleButton {
+    color: var(--BtnSimpleFontColor);
+    background: var(--BtnSimpleBgColor);
+    border: var(--BtnSimpleBorder);
+}
+
+.simpleButton:hover {
+    background: var(--BtnSimpleHoverBgColor);
+}
+
+.outlineButton {
+    color: var(--BtnOutlineFontColor);
+    background: var(--BtnOutlineBgColor);
+    border: var(--BtnOutlineBorder);
+}
+
+.outlineButton:hover {
+    background: var(--BtnOutlineHoverBgColor);
+}
+
+.disabledButton {
+    background: lightgray;
+    color: rgb(128, 128, 128);
+    border: 1px solid transparent;
+    pointer-events: none;
+}
+
+.disabledButton:hover {
+    background: lightgray;
+}
+

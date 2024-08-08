@@ -1,0 +1,35 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    p {
+        margin-bottom: 4px;
+    }
+
+    input {
+        transition: 0.3s;
+        width: inherit;
+        font-family: var(--GInputFontFamily), sans-serif;
+        height: var(--GInputHeight);
+        border-radius: var(--GInputBorderRadius);
+        padding: var(--GInputPadding);
+        border: var(--GInputBorder);
+        color: var(--GInputActiveColor);
+
+    }
+
+    input:focus {
+        outline: none;
+        border: 1px solid var(--GAccent);
+        transition: 0.3s;
+        color: var(--GInputFocusColor);
+    }
+}
+
+input:disabled {
+    background: lightgray;
+    color: var(--GInputDisabledColor);
+}
+

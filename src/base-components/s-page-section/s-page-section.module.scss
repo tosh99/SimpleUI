@@ -1,0 +1,11 @@
+.sectionPage {
+    padding: var(--PageVPadding) var(--PageHPadding);
+    width: 100%;
+    border-bottom: var(--PageSectionBottomBorder);
+
+    .sectionPageInner {
+        width: 100%;
+        height: 100%;
+        max-width: var(--PageSectionMinInnerWidth);
+    }
+}

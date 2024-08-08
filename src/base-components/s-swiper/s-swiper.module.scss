@@ -1,0 +1,29 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css";
+
+:global(.swiper) {
+    width: 100%;
+    height: 100%;
+}
+
+:global(.swiper-wrapper) {
+    padding-bottom: 50px;
+}
+
+:global(.swiper-slide) {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:global(.swiper-pagination) {
+    margin-bottom: 10px;
+}
+
+.myS {
+
+}

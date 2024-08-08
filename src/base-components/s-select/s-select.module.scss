@@ -1,0 +1,178 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 300px;
+
+    .selectValue {
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+        width: 100%;
+        position: relative;
+    }
+
+    .selectValue:hover {
+
+    }
+
+    .selectPlaceHolder {
+        color: gray;
+
+        p, input {
+
+        }
+    }
+
+    .selectOptionSearch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--GGray4);
+        border-radius: var(--GInputBorderRadius);
+        padding: var(--GInputPadding);
+        width: 100%;
+
+        input {
+            outline: none;
+            background: transparent;
+            height: 32px;
+            border: none;
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+
+    .selectSelectedValue {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--GInputPadding);
+        height: var(--GInputHeight);
+        border: 1px solid var(--GGray4);
+        border-radius: 6px;
+        font-size: 14px;
+        width: 100%;
+        cursor: pointer;
+                background: transparent;
+
+        p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    .iconSection {
+        display: flex;
+        gap: 6px;
+    }
+
+    .selectOptions {
+        position: absolute;
+        top: 42px;
+        background: white;
+        width: inherit;
+        border: 1px solid lightgray;
+        border-radius: 6px;
+        padding: 6px 4px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        flex-direction: column;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1;
+        gap: 5px;
+
+        .selectOption {
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px 16px;
+        }
+
+        .selectOption:hover, .selectOptionHover {
+            background: var(--GGray2);
+            transition: 0.3s;
+        }
+
+        .selectOptionSelected {
+            background: var(--GAccentLight6);
+        }
+
+        .selectOptionSelected:hover {
+            background: var(--GGray2);
+        }
+    }
+}
+
+.selectDisabled {
+    .selectValue {
+        cursor: inherit;
+        color: rgb(128, 128, 128);
+    }
+
+    .selectValue:hover {
+        background: inherit;
+        transition: 0.3s;
+    }
+
+    .selectOptionSearch {
+        background: lightgray;
+        color: rgb(128, 128, 128);
+    }
+
+    .selectSelectedValue {
+        background: lightgray;
+        color: rgb(128, 128, 128);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .select {
+        .selectValue {
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .selectValue:hover {
+
+        }
+
+        .selectOptionSearch {
+            input {
+                font-size: 12px;
+            }
+        }
+
+        .selectSelectedValue {
+
+
+            p {
+
+            }
+        }
+
+        .selectOptions {
+
+
+            .selectOption {
+
+            }
+
+            .selectOption:hover {
+
+            }
+
+            .selectOptionSelected {
+
+            }
+
+            .selectOptionSelected:hover {
+
+            }
+        }
+    }
+
+}

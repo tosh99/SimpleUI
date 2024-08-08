@@ -1,0 +1,30 @@
+.textarea {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    p {
+        margin-bottom: 4px;
+    }
+
+    textarea {
+        min-height: 120px;
+        transition: 0.3s;
+        resize: vertical;
+        border-radius: var(--GInputBorderRadius);
+        padding: var(--GInputPadding);
+        border: var(--GInputBorder);
+        font-family: var(--GInputFontFamily), sans-serif;
+    }
+
+    textarea::placeholder {
+        color: lightgray;
+    }
+
+    textarea:focus {
+        outline: none;
+        border: 1px solid var(--GAccent);
+        transition: 0.3s;
+    }
+}
+

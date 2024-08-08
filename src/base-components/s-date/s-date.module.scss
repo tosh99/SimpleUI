@@ -1,0 +1,33 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    p {
+        margin-bottom: 4px;
+    }
+
+    input {
+        height: var(--GInputHeight);
+        border-radius: var(--GInputBorderRadius);
+        padding: var(--GInputPadding);
+        transition: 0.3s;
+        border: 1px solid lightgray;
+        font-family: 'Inter Tight Variable', sans-serif;
+        width: inherit;
+    }
+
+    input:focus {
+        outline: none;
+        border: 1px solid var(--GAccent);
+        transition: 0.3s;
+    }
+
+
+}
+
+input:disabled {
+    background: lightgray;
+}
+

@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# IntelliJ IDEA project files
+.idea/
+
+# Visual Studio Code project files
+.vscode/
+
+# Distribution folder
+dist/
+
+# pnpm lockfile
+pnpm-lock.yaml
