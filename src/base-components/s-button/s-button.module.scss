@@ -2,16 +2,13 @@
     transition: 0.3s;
     pointer-events: auto;
     cursor: pointer;
-
     font-family: var(--BtnFontFamily), sans-serif;
-    height: var(--GInputHeight);
+    height: var(--InputHeight);
     border-radius: var(--BtnBorderRadius);
     padding: var(--BtnPadding);
-
     color: var(--BtnActiveFontColor);
     background: var(--BtnActiveBgColor);
     border: var(--BtnActiveBorder);
-
 
     .buttonText {
         font-size: var(--BtnFontSize);
@@ -48,13 +45,13 @@
 }
 
 .disabledButton {
-    background: lightgray;
-    color: rgb(128, 128, 128);
+    background: var(--BtnDisabledBgColor);
+    color: var(--BtnDisabledColor);
     border: 1px solid transparent;
     pointer-events: none;
 }
 
 .disabledButton:hover {
-    background: lightgray;
+    background: var(--BtnDisabledBgColor);
 }
 

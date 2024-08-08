@@ -1,11 +1,12 @@
 .appBadge {
-    padding: 5px;
+    padding: var(--BadgePadding);
     border-radius: var(--BadgeBorderRadius);
-    min-width: 50px;
     border: var(--BadgeBorder);
+    background: var(--BadgeBgColor);
+    min-width: 50px;
 
     p {
-        font-size: 11px;
-        font-weight: 500;
+        font-size: var(--BadgeFontSize);
+        font-weight:  var(--BadgeFontWeight);
     }
 }

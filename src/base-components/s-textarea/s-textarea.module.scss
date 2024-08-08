@@ -11,10 +11,10 @@
         min-height: 120px;
         transition: 0.3s;
         resize: vertical;
-        border-radius: var(--GInputBorderRadius);
-        padding: var(--GTextAreaPadding);
-        border: var(--GInputBorder);
-        font-family: var(--GInputFontFamily), sans-serif;
+        border-radius: var(--InputBorderRadius);
+        padding: var(--TextAreaPadding);
+        border: var(--InputBorder);
+        font-family: var(--InputFontFamily), sans-serif;
     }
 
     textarea::placeholder {
@@ -23,7 +23,7 @@
 
     textarea:focus {
         outline: none;
-        border: var(--GInputFocusBorder);
+        border: var(--InputFocusBorder);
         transition: 0.3s;
     }
 }

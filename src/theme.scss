@@ -1,4 +1,14 @@
+@import "theme_font";
+@import "theme_scroll";
+
 :root {
+    // Common Internal Variables
+    --BorderRadius: 8px;
+    --PlaceHolderColor: gray;
+    --DisabledBgColor: lightgray;
+    --DisabledFontColor: gray;
+    --InputHeight: 34px;
+
     //Page
     --PageHPadding: 100px;
     --PageVPadding: 100px;
@@ -7,47 +17,61 @@
 
     //Badge
     --BadgeBorder: 1px solid #eaeaea;
-    --BadgeBorderRadius: 10px;
-
+    --BadgeBorderRadius: var(--BorderRadius);
+    --BadgeBgColor: #F7F7F7;
+    --BadgePadding: 8px 10px;
+    --BadgeFontSize: 13px;
+    --BadgeFontWeight: 500;
 
     //Button
     --BtnPadding: 0 16px;
-    --BtnBorderRadius: 20px;
+    --BtnBorderRadius: var(--BorderRadius);
     --BtnFontSize: 12px;
     --BtnActiveBgColor: black;
-    --BtnActiveHoverBgColor: gray;
+    --BtnActiveHoverBgColor: #5c5c5c;
     --BtnActiveFontColor: white;
     --BtnActiveBorder: 1px solid transparent;
     --BtnOutlineBgColor: white;
-    --BtnOutlineHoverBgColor: #aaaaaa;
+    --BtnOutlineHoverBgColor: #cacaca;
     --BtnOutlineFontColor: black;
     --BtnOutlineBorder: 1px solid gray;
     --BtnSimpleBgColor: white;
-    --BtnSimpleHoverBgColor: #aaaaaa;
+    --BtnSimpleHoverBgColor: #cacaca;
     --BtnSimpleFontColor: black;
     --BtnSimpleBorder: 1px solid transparent;
     --BtnFontFamily: 'Work Sans Variable';
+    --BtnDisabledBgColor: var(--DisabledBgColor);
+    --BtnDisabledColor: var(--DisabledFontColor);
 
     //Input
-    --GInputPadding: 0 8px;
-    --GInputHeight: 34px;
-    --GInputBorder: 1px solid #bcbcbc;
-    --GInputFocusBorder: 1px solid #676767;
-    --GInputBorderRadius: 6px;
-    --GInputPlaceHolderColor: 6px;
-    --GInputActiveColor: 6px;
-    --GInputFocusColor: 6px;
-    --GInputDisabledColor: 6px;
-    --GInputFontFamily: 'Work Sans Variable';
+    --InputBorderRadius: var(--BorderRadius);
+    --InputPlaceHolderColor: var(--PlaceHolderColor);
+    --InputDisabledColor: var(--DisabledFontColor);
+    --InputDisabledBgColor: var(--DisabledBgColor);
+    --InputPadding: 0 8px;
+    --InputBorder: 1px solid #bcbcbc;
+    --InputFocusBorder: 1px solid #676767;
+    --InputActiveColor: black;
+    --InputFocusColor: black;
+    --InputFontFamily: 'Work Sans Variable';
 
-    //Select
-    --GSelectBackground: #eaeaea;
-    --GSelectSelectedBackground: #676767;
+    //Select (Uses properties from Input)
+    --SelectOptionBgColor: #eaeaea;
+    --SelectOptionFontSize: 13px;
+    --SelectSelectedBgColor: #676767;
 
     //TextArea
-        --GTextAreaPadding: 8px;
-
+    --TextAreaPadding: 8px;
 }
+
+//Mobile
+@media only screen and (max-width: 768px) {
+    :root {
+        --PageHPadding: 20px;
+        --PageVPadding: 20px;
+    }
+}
+
 
 html,
 body {

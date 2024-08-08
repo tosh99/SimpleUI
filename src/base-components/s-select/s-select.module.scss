@@ -18,10 +18,10 @@
     }
 
     .selectPlaceHolder {
-        color: gray;
+        color: var(--InputPlaceHolderColor);
 
         p, input {
-
+            color: var(--InputPlaceHolderColor);
         }
     }
 
@@ -29,9 +29,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: var(--GInputBorder);
-        border-radius: var(--GInputBorderRadius);
-        padding: var(--GInputPadding);
+        border: var(--InputBorder);
+        border-radius: var(--InputBorderRadius);
+        padding: var(--InputPadding);
         width: 100%;
 
         input {
@@ -41,6 +41,7 @@
             border: none;
             font-size: 14px;
             width: 100%;
+            font-family: var(--InputFontFamily), sans-serif;
         }
     }
 
@@ -48,14 +49,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--GInputPadding);
-        height: var(--GInputHeight);
-        border: var(--GInputBorder);
+        padding: var(--InputPadding);
+        height: var(--InputHeight);
+        border: var(--InputBorder);
         border-radius: 6px;
         font-size: 14px;
         width: 100%;
         cursor: pointer;
-                background: transparent;
+        background: transparent;
 
         p {
             text-overflow: ellipsis;
@@ -89,19 +90,20 @@
             cursor: pointer;
             border-radius: 6px;
             padding: 10px 16px;
+            font-size: var(--SelectOptionFontSize);
         }
 
         .selectOption:hover, .selectOptionHover {
-            background: var(--GSelectBackground);
+            background: var(--SelectOptionBgColor);
             transition: 0.3s;
         }
 
         .selectOptionSelected {
-            background: var(--GSelectSelectedBackground);
+            background: var(--SelectSelectedBgColor);
         }
 
         .selectOptionSelected:hover {
-            background: var(--GSelectBackground);
+            background: var(--SelectOptionBgColor);
         }
     }
 }
@@ -109,7 +111,7 @@
 .selectDisabled {
     .selectValue {
         cursor: inherit;
-        color: rgb(128, 128, 128);
+        color: var(--InputDisabledColor);
     }
 
     .selectValue:hover {
@@ -117,14 +119,15 @@
         transition: 0.3s;
     }
 
-    .selectOptionSearch {
-        background: lightgray;
-        color: rgb(128, 128, 128);
-    }
+    .selectOptionSearch, .selectSelectedValue {
+        background: var(--InputDisabledBgColor);
+        color: var(--InputDisabledColor);
+        border: 1px solid var(--InputDisabledBgColor);
+        cursor: text;
 
-    .selectSelectedValue {
-        background: lightgray;
-        color: rgb(128, 128, 128);
+        input {
+            cursor: text;
+        }
     }
 }
 
@@ -174,5 +177,4 @@
             }
         }
     }
-
 }

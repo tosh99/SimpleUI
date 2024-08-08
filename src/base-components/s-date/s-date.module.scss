@@ -9,9 +9,9 @@
     }
 
     input {
-        height: var(--GInputHeight);
-        border-radius: var(--GInputBorderRadius);
-        padding: var(--GInputPadding);
+        height: var(--InputHeight);
+        border-radius: var(--InputBorderRadius);
+        padding: var(--InputPadding);
         transition: 0.3s;
         border: 1px solid lightgray;
         font-family: 'Inter Tight Variable', sans-serif;
@@ -20,7 +20,7 @@
 
     input:focus {
         outline: none;
-        border: var(--GInputFocusBorder);
+        border: var(--InputFocusBorder);
         transition: 0.3s;
     }
 

@@ -38,15 +38,15 @@ Add this block to the top of the main css file and edit it to your requirements
         --BtnFontFamily: 'Work Sans Variable';
     
         //Input
-        --GInputPadding: 0 8px;
-        --GInputHeight: 34px;
-        --GInputBorder: 1px solid #eaeaea;
-        --GInputBorderRadius: 6px;
-        --GInputPlaceHolderColor: 6px;
-        --GInputActiveColor: 6px;
-        --GInputFocusColor: 6px;
-        --GInputDisabledColor: 6px;
-        --GInputFontFamily: 'Work Sans Variable';
+        --InputPadding: 0 8px;
+        --InputHeight: 34px;
+        --InputBorder: 1px solid #eaeaea;
+        --InputBorderRadius: 6px;
+        --InputPlaceHolderColor: 6px;
+        --InputActiveColor: 6px;
+        --InputFocusColor: 6px;
+        --InputDisabledColor: 6px;
+        --InputFontFamily: 'Work Sans Variable';
     }
 ```
 
