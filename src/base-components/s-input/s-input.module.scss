@@ -17,6 +17,7 @@
         padding: var(--InputPadding);
         border: var(--InputBorder);
         color: var(--InputActiveColor);
+        font-size: var(--InputFontSize);
     }
 
     input:focus {

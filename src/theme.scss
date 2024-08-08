@@ -8,6 +8,7 @@
     --DisabledBgColor: lightgray;
     --DisabledFontColor: gray;
     --InputHeight: 34px;
+    --InputFontSize: 14px;
 
     //Page
     --PageHPadding: 100px;
@@ -24,6 +25,7 @@
     --BadgeFontWeight: 500;
 
     //Button
+    --BtnHeight: var(--InputHeight);
     --BtnPadding: 0 16px;
     --BtnBorderRadius: var(--BorderRadius);
     --BtnFontSize: 12px;
@@ -48,17 +50,20 @@
     --InputPlaceHolderColor: var(--PlaceHolderColor);
     --InputDisabledColor: var(--DisabledFontColor);
     --InputDisabledBgColor: var(--DisabledBgColor);
-    --InputPadding: 0 8px;
+    --InputPadding: 0 24px;
     --InputBorder: 1px solid #bcbcbc;
     --InputFocusBorder: 1px solid #676767;
     --InputActiveColor: black;
     --InputFocusColor: black;
     --InputFontFamily: 'Work Sans Variable';
 
-    //Select (Uses properties from Input)
+    //Select
+    --SelectHeight: var(--InputHeight);
+    --SelectBgColor: white;
+    --SelectFontSize: var(--InputFontSize);
     --SelectOptionBgColor: #eaeaea;
-    --SelectOptionFontSize: 13px;
-    --SelectSelectedBgColor: #676767;
+    --SelectOptionFontSize: 14px;
+    --SelectOptionSelectedBgColor: #676767;
 
     //TextArea
     --TextAreaPadding: 8px;

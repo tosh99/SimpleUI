@@ -1,5 +1,8 @@
 # SimpleUI – The No Fuss React Component Library
 
+## Salient Features
+> https://bundlephobia.com/package/react-simple-ui-lib@0.3.4
+
 ## Installation
 > pnpm i react-simple-ui-lib
 
@@ -7,46 +10,71 @@
 Add this block to the top of the main css file and edit it to your requirements
 ```scss
     :root {
+        // Common Internal Variables
+        --BorderRadius: 8px;
+        --PlaceHolderColor: gray;
+        --DisabledBgColor: lightgray;
+        --DisabledFontColor: gray;
+        --InputHeight: 34px;
+        --InputFontSize: 14px;
+    
         //Page
         --PageHPadding: 100px;
         --PageVPadding: 100px;
-    
-        //Page Section
+        --PageBottomBorder: 1px solid #eaeaea;
         --PageSectionMinInnerWidth: 1280px;
-        --PageSectionBottomBorder: 1px solid #eaeaea;
-
+    
         //Badge
         --BadgeBorder: 1px solid #eaeaea;
-        --BadgeBorderRadius: 10px;
+        --BadgeBorderRadius: var(--BorderRadius);
+        --BadgeBgColor: #F7F7F7;
+        --BadgePadding: 8px 10px;
+        --BadgeFontSize: 13px;
+        --BadgeFontWeight: 500;
     
         //Button
+        --BtnHeight: var(--InputHeight);
         --BtnPadding: 0 16px;
-        --BtnBorderRadius: 20px;
+        --BtnBorderRadius: var(--BorderRadius);
         --BtnFontSize: 12px;
         --BtnActiveBgColor: black;
-        --BtnActiveHoverBgColor: gray;
+        --BtnActiveHoverBgColor: #5c5c5c;
         --BtnActiveFontColor: white;
         --BtnActiveBorder: 1px solid transparent;
         --BtnOutlineBgColor: white;
-        --BtnOutlineHoverBgColor: #aaaaaa;
+        --BtnOutlineHoverBgColor: #cacaca;
         --BtnOutlineFontColor: black;
         --BtnOutlineBorder: 1px solid gray;
         --BtnSimpleBgColor: white;
-        --BtnSimpleHoverBgColor: #aaaaaa;
+        --BtnSimpleHoverBgColor: #cacaca;
         --BtnSimpleFontColor: black;
         --BtnSimpleBorder: 1px solid transparent;
         --BtnFontFamily: 'Work Sans Variable';
+        --BtnDisabledBgColor: var(--DisabledBgColor);
+        --BtnDisabledColor: var(--DisabledFontColor);
     
         //Input
-        --InputPadding: 0 8px;
-        --InputHeight: 34px;
-        --InputBorder: 1px solid #eaeaea;
-        --InputBorderRadius: 6px;
-        --InputPlaceHolderColor: 6px;
-        --InputActiveColor: 6px;
-        --InputFocusColor: 6px;
-        --InputDisabledColor: 6px;
+        --InputBorderRadius: var(--BorderRadius);
+        --InputPlaceHolderColor: var(--PlaceHolderColor);
+        --InputDisabledColor: var(--DisabledFontColor);
+        --InputDisabledBgColor: var(--DisabledBgColor);
+        --InputPadding: 0 24px;
+        --InputBorder: 1px solid #bcbcbc;
+        --InputFocusBorder: 1px solid #676767;
+        --InputActiveColor: black;
+        --InputFocusColor: black;
         --InputFontFamily: 'Work Sans Variable';
+    
+        //Select
+        --SelectHeight: var(--InputHeight);
+        --SelectBgColor: white;
+        --SelectFontSize: var(--InputFontSize);
+        --SelectOptionBgColor: #eaeaea;
+        --SelectOptionFontSize: 14px;
+        --SelectOptionSelectedBgColor: #676767;
+    
+        //TextArea
+        --TextAreaPadding: 8px;
     }
 ```
 

@@ -29,19 +29,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: var(--SelectHeight);
         border: var(--InputBorder);
         border-radius: var(--InputBorderRadius);
         padding: var(--InputPadding);
+        background: var(--SelectBgColor);
         width: 100%;
 
         input {
+            font-size: var(--SelectFontSize);
+            font-family: var(--InputFontFamily), sans-serif;
             outline: none;
             background: transparent;
-            height: 32px;
+            height: 100%;
             border: none;
-            font-size: 14px;
             width: 100%;
-            font-family: var(--InputFontFamily), sans-serif;
         }
     }
 
@@ -50,18 +52,19 @@
         justify-content: space-between;
         align-items: center;
         padding: var(--InputPadding);
-        height: var(--InputHeight);
+        height: var(--SelectHeight);
         border: var(--InputBorder);
-        border-radius: 6px;
-        font-size: 14px;
+        border-radius: var(--InputBorderRadius);
+        background: var(--SelectBgColor);
+        font-size: var(--SelectFontSize);
         width: 100%;
         cursor: pointer;
-        background: transparent;
 
         p {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+            font-size: var(--SelectFontSize);
         }
     }
 
@@ -91,6 +94,10 @@
             border-radius: 6px;
             padding: 10px 16px;
             font-size: var(--SelectOptionFontSize);
+
+            p {
+                font-size: var(--SelectOptionFontSize);
+            }
         }
 
         .selectOption:hover, .selectOptionHover {
@@ -99,7 +106,7 @@
         }
 
         .selectOptionSelected {
-            background: var(--SelectSelectedBgColor);
+            background: var(--SelectOptionSelectedBgColor);
         }
 
         .selectOptionSelected:hover {
