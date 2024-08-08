@@ -31,13 +31,22 @@
     //Input
     --GInputPadding: 0 8px;
     --GInputHeight: 34px;
-    --GInputBorder: 1px solid #eaeaea;
+    --GInputBorder: 1px solid #bcbcbc;
+    --GInputFocusBorder: 1px solid #676767;
     --GInputBorderRadius: 6px;
     --GInputPlaceHolderColor: 6px;
     --GInputActiveColor: 6px;
     --GInputFocusColor: 6px;
     --GInputDisabledColor: 6px;
     --GInputFontFamily: 'Work Sans Variable';
+
+    //Select
+    --GSelectBackground: #eaeaea;
+    --GSelectSelectedBackground: #676767;
+
+    //TextArea
+        --GTextAreaPadding: 8px;
+
 }
 
 html,

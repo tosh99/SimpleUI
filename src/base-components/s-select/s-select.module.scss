@@ -29,7 +29,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid var(--GGray4);
+        border: var(--GInputBorder);
         border-radius: var(--GInputBorderRadius);
         padding: var(--GInputPadding);
         width: 100%;
@@ -50,7 +50,7 @@
         align-items: center;
         padding: var(--GInputPadding);
         height: var(--GInputHeight);
-        border: 1px solid var(--GGray4);
+        border: var(--GInputBorder);
         border-radius: 6px;
         font-size: 14px;
         width: 100%;
@@ -92,16 +92,16 @@
         }
 
         .selectOption:hover, .selectOptionHover {
-            background: var(--GGray2);
+            background: var(--GSelectBackground);
             transition: 0.3s;
         }
 
         .selectOptionSelected {
-            background: var(--GAccentLight6);
+            background: var(--GSelectSelectedBackground);
         }
 
         .selectOptionSelected:hover {
-            background: var(--GGray2);
+            background: var(--GSelectBackground);
         }
     }
 }

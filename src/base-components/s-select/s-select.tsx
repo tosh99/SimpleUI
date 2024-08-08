@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import styles from "./s-select.module.scss";
-import { useClickAway, useDebounce, useKeyPress } from "ahooks";
-import { TbSelector } from "react-icons/tb";
-import { Oval } from "react-loader-spinner";
+import {useClickAway, useDebounce, useKeyPress} from "ahooks";
+import {TbSelector} from "react-icons/tb";
+import {Oval} from "react-loader-spinner";
 
 export function SSelect(props: SSelectProps) {
     const [is_open, set_is_open] = useState(false);
@@ -17,7 +17,7 @@ export function SSelect(props: SSelectProps) {
     const [search_text, set_search_text] = useState("");
     const [options, set_options] = useState(props.options);
     const [highlight_index, set_highlight_index] = useState(0);
-    const debounced_search_text = useDebounce(search_text, { wait: 500 });
+    const debounced_search_text = useDebounce(search_text, {wait: 500});
     const optionsRef = useRef<HTMLDivElement>(null);
 
     const label_key = useMemo(() => {
@@ -70,7 +70,9 @@ export function SSelect(props: SSelectProps) {
 
     useKeyPress(["enter"], () => {
         if (options[highlight_index] && is_open) {
-            props.onChange(options[highlight_index], highlight_index);
+            if(props.onChange) {
+                props.onChange(options[highlight_index], highlight_index);
+            }
             set_is_open(false);
             set_search_text("");
         }
@@ -80,17 +82,18 @@ export function SSelect(props: SSelectProps) {
         if (optionsRef.current) {
             const optionElement = optionsRef.current.children[index] as HTMLElement;
             if (optionElement) {
-                optionElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                optionElement.scrollIntoView({behavior: "smooth", block: "nearest"});
             }
         }
     };
 
     return (
-        <div className={`${styles.select} ${props.disabled ? styles.selectDisabled : ""}`} ref={ref} style={{ minWidth: props.width, width: props.width }}>
+        <div className={`${styles.select} ${props.disabled ? styles.selectDisabled : ""}`} ref={ref}
+             style={{minWidth: props.width, width: props.width}}>
             {/*Label*/}
             {props.label ? (
                 <p>
-                    {props.label} {props.required ? <small style={{ color: "red" }}>*</small> : ""}
+                    {props.label} {props.required ? <small style={{color: "red"}}>*</small> : ""}
                 </p>
             ) : null}
 
@@ -114,24 +117,29 @@ export function SSelect(props: SSelectProps) {
                             id={props.id}
                             autoComplete={"off"}
                             disabled={props.disabled}
-                            placeholder={props.placeholder}
+                            placeholder={props.placeholder || 'Search...'}
                             value={is_open ? search_text : search_text || (props.value && props.value[label_key])}
                             onChange={(ev) => {
                                 set_search_text(ev.target.value);
                             }}
                             title={props.value && props.value[label_key] ? props.value[label_key] : undefined}
-                            style={{ width: "100%" }}
+                            style={{width: "100%"}}
                             onFocus={(ev) => {
                                 ev.stopPropagation();
                                 set_is_open(true);
                             }}
                         />
-                        <div className={styles.iconSection}>{props.loading ? <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16" ariaLabel="fidget-spinner-loading" /> : <TbSelector />}</div>
+                        <div className={styles.iconSection}>{props.loading ?
+                            <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16"
+                                  ariaLabel="fidget-spinner-loading"/> : <TbSelector/>}</div>
                     </div>
                 ) : (
-                    <div className={`${styles.selectSelectedValue} ${props.value && props.value[label_key] ? "" : styles.selectPlaceHolder}`}>
-                        <p title={props.value && props.value[label_key] ? props.value[label_key] : undefined}>{(props.value && props.value[label_key]) || props.placeholder}</p>
-                        <div className={styles.iconSection}>{props.loading ? <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16" ariaLabel="fidget-spinner-loading" /> : <TbSelector />}</div>
+                    <div
+                        className={`${styles.selectSelectedValue} ${props.value && props.value[label_key] ? "" : styles.selectPlaceHolder}`}>
+                        <p title={props.value && props.value[label_key] ? props.value[label_key] : undefined}>{(props.value && props.value[label_key]) || props.placeholder || 'Select'}</p>
+                        <div className={styles.iconSection}>{props.loading ?
+                            <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16"
+                                  ariaLabel="fidget-spinner-loading"/> : <TbSelector/>}</div>
                     </div>
                 )}
 
@@ -143,7 +151,9 @@ export function SSelect(props: SSelectProps) {
                                     className={`${styles.selectOption} ${highlight_index === option_idx ? styles.selectOptionHover : ""} ${props.value && props.value[value_key] == option[value_key] ? styles.selectOptionSelected : ""}`}
                                     onClick={(ev) => {
                                         ev.stopPropagation();
-                                        props.onChange(option, option_idx);
+                                        if (props.onChange) {
+                                            props.onChange(option, option_idx);
+                                        }
                                         set_is_open(false);
                                         set_search_text("");
                                     }}
@@ -170,11 +180,11 @@ interface SSelectProps {
     label?: string;
     label_key?: string;
     value_key?: string;
-    placeholder: string;
+    placeholder?: string;
     loading?: boolean;
     disabled?: boolean;
     searchable?: boolean;
     filter?: (search_text: string) => any[];
-    onChange: (item: any, item_index: number) => void;
+    onChange?: (item: any, item_index: number) => void;
     onSearch?: (item: string) => void;
 }

@@ -20,7 +20,7 @@
 
     input:focus {
         outline: none;
-        border: 1px solid var(--GAccent);
+        border: var(--GInputFocusBorder);
         transition: 0.3s;
     }
 

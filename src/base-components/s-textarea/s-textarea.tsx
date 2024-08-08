@@ -14,7 +14,7 @@ export function STextarea(props: STextareaProps) {
                         props.onChange(ev);
                     }
                 }}
-                placeholder={props.placeholder}
+                placeholder={props.placeholder || 'Placeholder'}
             />
         </div>
     );

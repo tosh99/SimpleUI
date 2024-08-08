@@ -12,7 +12,7 @@
         transition: 0.3s;
         resize: vertical;
         border-radius: var(--GInputBorderRadius);
-        padding: var(--GInputPadding);
+        padding: var(--GTextAreaPadding);
         border: var(--GInputBorder);
         font-family: var(--GInputFontFamily), sans-serif;
     }
@@ -23,7 +23,7 @@
 
     textarea:focus {
         outline: none;
-        border: 1px solid var(--GAccent);
+        border: var(--GInputFocusBorder);
         transition: 0.3s;
     }
 }

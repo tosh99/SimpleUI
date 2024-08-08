@@ -53,6 +53,12 @@ Add this block to the top of the main css file and edit it to your requirements
 ## Component List
 ### Flex
 ```tsx
-<SSelect />
+<SFlex />
+```
+
+### Button
+
+```tsx
+<SButton />
 ```
 

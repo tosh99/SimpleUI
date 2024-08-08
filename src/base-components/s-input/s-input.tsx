@@ -15,7 +15,7 @@ export function SInput(props: SInputProps) {
                 autoComplete={"off"}
                 type="text"
                 disabled={props.disabled}
-                placeholder={props.placeholder}
+                placeholder={props.placeholder || 'Placeholder'}
                 value={props.value}
                 onChange={(ev) => {
                     if (props.onChange) {
