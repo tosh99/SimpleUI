@@ -6,7 +6,7 @@ export function SInput(props: SInputProps) {
     return (
         <div className={styles.input} style={{ ...props.style, width: props.width || "100%" }}>
             {props.label ? (
-                <p>
+                <p style={{...props.header_styles}}>
                     {props.label} {props.required ? <small style={{ color: "red" }}>*</small> : ""}
                 </p>
             ) : null}
@@ -35,6 +35,7 @@ interface SInputProps {
     disabled?: boolean;
     required?: boolean;
     style?: CSSProperties;
+    header_styles?: CSSProperties;
     value?: string | number;
     is_full_width?: boolean;
     onChange?: (value: string) => void;
