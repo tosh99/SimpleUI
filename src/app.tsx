@@ -11,6 +11,7 @@ import { SButton } from './base-components/s-button/s-button';
 import { SBadge } from './base-components/s-badge/s-badge';
 import { SAccordion } from './base-components/s-accordion/s-accordion';
 import { FaPlus, FaUser } from 'react-icons/fa6';
+import { SToggle } from './base-components/s-toggle/s-toggle';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -19,6 +20,7 @@ const options = [
 
 export function App() {
     const [opt, set_opt] = useState(options[0]);
+    const [is_on, set_is_on] = useState(true);
 
     return (
         <>
@@ -51,10 +53,16 @@ export function App() {
                     </SFlex>
                     <br />
                     <header>Inputs</header>
-                    <SFlex>
+                    <SFlex align={'end'}>
                         <SInput label={'Normal'} required />
                         <SInput label={'Disabled'} disabled value={'Disabled'} />
-                        <SInput label={'With Input'} value={'Input'} />
+                        <SInput label={'With Input'} value={is_on.toString()} />
+                        <SToggle
+                            is_on={is_on}
+                            onToggle={() => {
+                                set_is_on((prev) => !prev);
+                            }}
+                        />
                     </SFlex>
                     <br />
                     <header>Select</header>

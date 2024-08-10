@@ -1,0 +1,21 @@
+.switch {
+    background-color: gray;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    min-width: 40px;
+    height: 25px;
+}
+
+.switchOn {
+    justify-content: flex-end;
+    background-color: green;
+}
+
+.handle {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+}

@@ -75,7 +75,7 @@
 
     .selectOptions {
         position: absolute;
-        top: 42px;
+        top: calc(var(--SelectHeight) + 8px);
         background: white;
         width: inherit;
         border: 1px solid lightgray;

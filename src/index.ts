@@ -14,3 +14,4 @@ export { SPageSection } from './base-components/s-page-section/s-page-section';
 export { SSwiper } from './base-components/s-swiper/s-swiper';
 export { SMarquee } from './base-components/s-marquee/s-marquee';
 export { SAccordion } from './base-components/s-accordion/s-accordion';
+export { SToggle } from './base-components/s-toggle/s-toggle';
