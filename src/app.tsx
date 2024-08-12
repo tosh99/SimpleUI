@@ -58,6 +58,8 @@ export function App() {
                         <SInput label={'Disabled'} disabled value={'Disabled'} />
                         <SInput label={'With Input'} value={is_on.toString()} />
                         <SToggle
+                            off_text={'Off'}
+                            on_text={'On'}
                             is_on={is_on}
                             onToggle={() => {
                                 set_is_on((prev) => !prev);
@@ -76,12 +78,8 @@ export function App() {
                     <br />
                     <header>Textarea</header>
                     <STextarea />
-                </SFlex>
-            </SPageSection>
-
-            <SPageSection disableAnimation height={'auto'}>
-                <SFlex direction={'column'}>
-                    <p>Accordion Example</p>
+                    <br />
+                    <header>Accordion</header>
                     <SAccordion
                         accordionBase={
                             <SFlex justify={'space-between'}>

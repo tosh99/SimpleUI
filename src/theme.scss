@@ -9,6 +9,8 @@
     --DisabledFontColor: gray;
     --InputHeight: 34px;
     --InputFontSize: 14px;
+    --InputLabelFontSize: 13px;
+    --InputLabelColor: #353535;
 
     //Page
     --PageHPadding: 100px;
@@ -50,7 +52,7 @@
     --InputPlaceHolderColor: var(--PlaceHolderColor);
     --InputDisabledColor: var(--DisabledFontColor);
     --InputDisabledBgColor: var(--DisabledBgColor);
-    --InputPadding: 0 24px;
+    --InputPadding: 0 12px;
     --InputBorder: 1px solid #bcbcbc;
     --InputFocusBorder: 1px solid #676767;
     --InputActiveColor: black;
@@ -64,9 +66,13 @@
     --SelectOptionBgColor: #eaeaea;
     --SelectOptionFontSize: 14px;
     --SelectOptionSelectedBgColor: #676767;
+    --SelectLabelColor: var(--InputLabelColor);
+    --SelectLabelFontSize: var(--InputLabelFontSize);
 
     //TextArea
-    --TextAreaPadding: 8px;
+    --TextAreaPadding: 12px;
+    --TextAreaLabelColor: var(--InputLabelColor);
+    --TextAreaLabelFontSize: var(--InputLabelFontSize);
 }
 
 //Mobile

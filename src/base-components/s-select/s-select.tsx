@@ -1,8 +1,8 @@
-import React, {useEffect, useMemo, useRef, useState} from "react";
-import styles from "./s-select.module.scss";
-import {useClickAway, useDebounce, useKeyPress} from "ahooks";
-import {TbSelector} from "react-icons/tb";
-import {Oval} from "react-loader-spinner";
+import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
+import styles from './s-select.module.scss';
+import { useClickAway, useDebounce, useKeyPress } from 'ahooks';
+import { TbSelector } from 'react-icons/tb';
+import { Oval } from 'react-loader-spinner';
 
 export function SSelect(props: SSelectProps) {
     const [is_open, set_is_open] = useState(false);
@@ -14,18 +14,18 @@ export function SSelect(props: SSelectProps) {
         return false;
     }, ref);
 
-    const [search_text, set_search_text] = useState("");
+    const [search_text, set_search_text] = useState('');
     const [options, set_options] = useState(props.options);
     const [highlight_index, set_highlight_index] = useState(0);
-    const debounced_search_text = useDebounce(search_text, {wait: 500});
+    const debounced_search_text = useDebounce(search_text, { wait: 500 });
     const optionsRef = useRef<HTMLDivElement>(null);
 
     const label_key = useMemo(() => {
-        return props.label_key || "label";
+        return props.label_key || 'label';
     }, [props.label_key]);
 
     const value_key = useMemo(() => {
-        return props.value_key || "value";
+        return props.value_key || 'value';
     }, [props.value_key]);
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export function SSelect(props: SSelectProps) {
         }
     }, [debounced_search_text]);
 
-    useKeyPress(["downarrow"], () => {
+    useKeyPress(['downarrow'], () => {
         if (is_open) {
             set_highlight_index((prev) => {
                 const newIndex = prev + 1 === options.length ? options.length - 1 : prev + 1;
@@ -54,7 +54,7 @@ export function SSelect(props: SSelectProps) {
         }
     });
 
-    useKeyPress(["uparrow"], () => {
+    useKeyPress(['uparrow'], () => {
         if (is_open) {
             set_highlight_index((prev) => {
                 const newIndex = prev - 1 < 0 ? 0 : prev - 1;
@@ -64,17 +64,17 @@ export function SSelect(props: SSelectProps) {
         }
     });
 
-    useKeyPress(["esc"], () => {
+    useKeyPress(['esc'], () => {
         set_is_open(false);
     });
 
-    useKeyPress(["enter"], () => {
+    useKeyPress(['enter'], () => {
         if (options[highlight_index] && is_open) {
-            if(props.onChange) {
+            if (props.onChange) {
                 props.onChange(options[highlight_index], highlight_index);
             }
             set_is_open(false);
-            set_search_text("");
+            set_search_text('');
         }
     });
 
@@ -82,18 +82,17 @@ export function SSelect(props: SSelectProps) {
         if (optionsRef.current) {
             const optionElement = optionsRef.current.children[index] as HTMLElement;
             if (optionElement) {
-                optionElement.scrollIntoView({behavior: "smooth", block: "nearest"});
+                optionElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         }
     };
 
     return (
-        <div className={`${styles.select} ${props.disabled ? styles.selectDisabled : ""}`} ref={ref}
-             style={{minWidth: props.width, width: props.width}}>
+        <div className={`${styles.select} ${props.disabled ? styles.selectDisabled : ''}`} ref={ref} style={{ minWidth: props.width, width: props.width }}>
             {/*Label*/}
             {props.label ? (
-                <p>
-                    {props.label} {props.required ? <small style={{color: "red"}}>*</small> : ""}
+                <p className={styles.selectLabel} style={props.label_style}>
+                    {props.label} {props.required ? <small style={{ color: 'red' }}>*</small> : ''}
                 </p>
             ) : null}
 
@@ -109,13 +108,12 @@ export function SSelect(props: SSelectProps) {
                     } else {
                         set_is_open((prev) => !prev);
                     }
-                }}
-            >
+                }}>
                 {props.searchable ? (
                     <div className={styles.selectOptionSearch}>
                         <input
                             id={props.id}
-                            autoComplete={"off"}
+                            autoComplete={'off'}
                             disabled={props.disabled}
                             placeholder={props.placeholder || 'Search...'}
                             value={is_open ? search_text : search_text || (props.value && props.value[label_key])}
@@ -123,23 +121,46 @@ export function SSelect(props: SSelectProps) {
                                 set_search_text(ev.target.value);
                             }}
                             title={props.value && props.value[label_key] ? props.value[label_key] : undefined}
-                            style={{width: "100%"}}
+                            style={{ width: '100%' }}
                             onFocus={(ev) => {
                                 ev.stopPropagation();
                                 set_is_open(true);
                             }}
                         />
-                        <div className={styles.iconSection}>{props.loading ?
-                            <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16"
-                                  ariaLabel="fidget-spinner-loading"/> : <TbSelector/>}</div>
+                        <div className={styles.selectIconSection}>
+                            {props.loading ? (
+                                <Oval
+                                    color="gray"
+                                    secondaryColor="lightgray"
+                                    visible={props.loading}
+                                    height="16"
+                                    width="16"
+                                    ariaLabel="fidget-spinner-loading"
+                                />
+                            ) : (
+                                <TbSelector />
+                            )}
+                        </div>
                     </div>
                 ) : (
-                    <div
-                        className={`${styles.selectSelectedValue} ${props.value && props.value[label_key] ? "" : styles.selectPlaceHolder}`}>
-                        <p title={props.value && props.value[label_key] ? props.value[label_key] : undefined}>{(props.value && props.value[label_key]) || props.placeholder || 'Select'}</p>
-                        <div className={styles.iconSection}>{props.loading ?
-                            <Oval color="gray" secondaryColor="lightgray" visible={props.loading} height="16" width="16"
-                                  ariaLabel="fidget-spinner-loading"/> : <TbSelector/>}</div>
+                    <div className={`${styles.selectSelectedValue} ${props.value && props.value[label_key] ? '' : styles.selectPlaceHolder}`}>
+                        <p title={props.value && props.value[label_key] ? props.value[label_key] : undefined}>
+                            {(props.value && props.value[label_key]) || props.placeholder || 'Select'}
+                        </p>
+                        <div className={styles.selectIconSection}>
+                            {props.loading ? (
+                                <Oval
+                                    color="gray"
+                                    secondaryColor="lightgray"
+                                    visible={props.loading}
+                                    height="16"
+                                    width="16"
+                                    ariaLabel="fidget-spinner-loading"
+                                />
+                            ) : (
+                                <TbSelector />
+                            )}
+                        </div>
                     </div>
                 )}
 
@@ -148,16 +169,15 @@ export function SSelect(props: SSelectProps) {
                         {options.slice(0, 20).map((option, option_idx) => {
                             return (
                                 <div
-                                    className={`${styles.selectOption} ${highlight_index === option_idx ? styles.selectOptionHover : ""} ${props.value && props.value[value_key] == option[value_key] ? styles.selectOptionSelected : ""}`}
+                                    className={`${styles.selectOption} ${highlight_index === option_idx ? styles.selectOptionHover : ''} ${props.value && props.value[value_key] == option[value_key] ? styles.selectOptionSelected : ''}`}
                                     onClick={(ev) => {
                                         ev.stopPropagation();
                                         if (props.onChange) {
                                             props.onChange(option, option_idx);
                                         }
                                         set_is_open(false);
-                                        set_search_text("");
-                                    }}
-                                >
+                                        set_search_text('');
+                                    }}>
                                     <p>{option.render ? option.render(option) : option[label_key]}</p>
                                 </div>
                             );
@@ -178,6 +198,7 @@ interface SSelectProps {
     options: any[];
     value?: any;
     label?: string;
+    label_style?: CSSProperties;
     label_key?: string;
     value_key?: string;
     placeholder?: string;

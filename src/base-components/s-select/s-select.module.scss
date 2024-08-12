@@ -5,6 +5,12 @@
     width: 100%;
     max-width: 300px;
 
+    .selectLabel {
+        margin-bottom: 4px;
+        font-size: var(--SelectLabelFontSize);
+        color: var(--SelectLabelColor);
+    }
+
     .selectValue {
         display: flex;
         align-items: center;
@@ -68,7 +74,7 @@
         }
     }
 
-    .iconSection {
+    .selectIconSection {
         display: flex;
         gap: 6px;
     }

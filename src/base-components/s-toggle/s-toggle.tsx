@@ -4,16 +4,15 @@ import styles from './s-toggle.module.scss';
 import { SFlex } from '../s-flex/s-flex';
 
 export function SToggle(props: SToggleProps) {
-    const toggleSwitch = () => {
-        if (props.onToggle) {
-            props.onToggle();
-        }
-    };
-
     return (
         <SFlex align={'center'}>
             <p>{props.off_text}</p>
-            <SFlex className={`${styles.switch} ${props.is_on ? styles.switchOn : ''}`} align={'center'} onClick={toggleSwitch}>
+            <SFlex
+                className={`${styles.switch} ${props.is_on ? styles.switchOn : ''}`}
+                align={'center'}
+                onClick={() => {
+                    if (props.onToggle) props.onToggle();
+                }}>
                 <motion.div className={styles.handle} layout transition={spring} />
             </SFlex>
             <p>{props.on_text}</p>

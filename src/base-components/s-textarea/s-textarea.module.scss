@@ -1,30 +1,42 @@
-.textarea {
+.textArea {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 100%;
+    position: relative;
 
-    p {
+    .textAreaLabel {
         margin-bottom: 4px;
+        color: var(--TextAreaLabelColor);
+        font-size: var(--TextAreaLabelFontSize);
     }
 
     textarea {
         min-height: 120px;
         transition: 0.3s;
         resize: vertical;
+        font-size: var(--InputFontSize);
         border-radius: var(--InputBorderRadius);
         padding: var(--TextAreaPadding);
         border: var(--InputBorder);
         font-family: var(--InputFontFamily), sans-serif;
     }
 
-    textarea::placeholder {
-        color: lightgray;
-    }
-
     textarea:focus {
         outline: none;
         border: var(--InputFocusBorder);
+        color: var(--InputFocusColor);
         transition: 0.3s;
     }
+
+    textarea::placeholder {
+        color: var(--InputPlaceHolderColor);
+    }
+
+    textarea:disabled {
+        background: var(--InputDisabledBgColor);
+        color: var(--InputDisabledColor);
+        border: 1px solid var(--InputDisabledBgColor);
+    }
+
 }
 
