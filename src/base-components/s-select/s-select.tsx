@@ -169,12 +169,11 @@ export function SSelect(props: SSelectProps) {
                         {options.slice(0, 20).map((option, option_idx) => {
                             return (
                                 <div
+                                    key={'Option' + option_idx}
                                     className={`${styles.selectOption} ${highlight_index === option_idx ? styles.selectOptionHover : ''} ${props.value && props.value[value_key] == option[value_key] ? styles.selectOptionSelected : ''}`}
                                     onClick={(ev) => {
                                         ev.stopPropagation();
-                                        if (props.onChange) {
-                                            props.onChange(option, option_idx);
-                                        }
+                                        if (props.onChange) props.onChange(option, option_idx);
                                         set_is_open(false);
                                         set_search_text('');
                                     }}>

@@ -27,13 +27,12 @@ export const SSwiper = (props: SSwiperProps) => {
             scrollbar={{
                 draggable: true,
             }}
-            className={styles.myS}
             style={{
                 minHeight: 220,
                 height: props.height || 'auto',
             }}>
             {props.items.map((item, idx) => (
-                <SwiperSlide>
+                <SwiperSlide key={'Swipe' + idx}>
                     <SFlex height={'100%'} width={'100%'} style={{ minHeight: 200 }} align={'center'} justify={'center'}>
                         {props.renderItem(item, idx)}
                     </SFlex>

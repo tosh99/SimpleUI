@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import styles from "./s-tabs.module.scss";
-import React from "react";
+import { ReactNode } from 'react';
+import styles from './s-tabs.module.scss';
+import React from 'react';
 
 export const STabs = (props: { tabs: STab[]; onTabClick: (item: number) => void; tab_key?: number | string }) => {
     return (
@@ -9,12 +9,11 @@ export const STabs = (props: { tabs: STab[]; onTabClick: (item: number) => void;
             {props.tabs.map((item, idx) => {
                 return (
                     <div
-                        className={`${styles.tab} ${props.tab_key == idx ? styles.tabSelected : ""}`}
-                        key={idx.toString()}
+                        key={'Tab' + idx}
+                        className={`${styles.tab} ${props.tab_key == idx ? styles.tabSelected : ''}`}
                         onClick={() => {
                             props.onTabClick(idx);
-                        }}
-                    >
+                        }}>
                         {item.label}
                     </div>
                 );
