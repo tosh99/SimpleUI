@@ -13,7 +13,7 @@ export function STextarea(props: STextareaProps) {
                 value={props.value}
                 onChange={(ev) => {
                     if (props.onChange) {
-                        props.onChange(ev);
+                        props.onChange(ev.target.value);
                     }
                 }}
                 placeholder={props.placeholder || 'Placeholder'}

@@ -12,6 +12,7 @@ import { SBadge } from './base-components/s-badge/s-badge';
 import { SAccordion } from './base-components/s-accordion/s-accordion';
 import { FaPlus, FaUser } from 'react-icons/fa6';
 import { SToggle } from './base-components/s-toggle/s-toggle';
+import { FaTruckLoading } from 'react-icons/fa';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -54,7 +55,7 @@ export function App() {
                     <br />
                     <header>Inputs</header>
                     <SFlex align={'end'}>
-                        <SInput label={'Normal'} required />
+                        <SInput width={400} label={'Normal'} required />
                         <SInput label={'Disabled'} disabled value={'Disabled'} />
                         <SInput label={'With Input'} value={is_on.toString()} />
                         <SToggle
