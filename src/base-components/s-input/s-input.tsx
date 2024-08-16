@@ -1,6 +1,5 @@
-import { CSSProperties } from 'react';
+import React, { CSSProperties } from 'react';
 import styles from './s-input.module.scss';
-import React from 'react';
 
 export function SInput(props: SInputProps) {
     return (

@@ -1,6 +1,5 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import styles from './s-flex.module.scss';
-import React from 'react';
 
 export function SFlex(props: SFlexProps) {
     return (

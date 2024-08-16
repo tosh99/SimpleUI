@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './s-tabs.module.scss';
-import React from 'react';
 
 export const STabs = (props: { tabs: STab[]; onTabClick: (item: number) => void; tab_key?: number | string }) => {
     return (

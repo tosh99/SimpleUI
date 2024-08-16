@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './s-badge.module.scss';
 import { SFlex } from '../s-flex/s-flex';
 

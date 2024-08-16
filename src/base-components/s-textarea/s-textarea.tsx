@@ -1,6 +1,5 @@
-import { CSSProperties } from 'react';
+import React, { CSSProperties } from 'react';
 import styles from './s-textarea.module.scss';
-import React from 'react';
 
 export function STextarea(props: STextareaProps) {
     return (

@@ -1,11 +1,10 @@
-import { CSSProperties, ReactNode, useMemo, useState } from "react";
-import styles from "./s-table.module.scss";
-import { FaSort } from "react-icons/fa";
-import React from "react";
-import {SFlex} from "../s-flex/s-flex";
+import React, { CSSProperties, ReactNode, useMemo, useState } from 'react';
+import styles from './s-table.module.scss';
+import { FaSort } from 'react-icons/fa';
+import { SFlex } from '../s-flex/s-flex';
 
 export const STable = (props: STableProps) => {
-    const [sort_by, set_sort_by] = useState<string>("");
+    const [sort_by, set_sort_by] = useState<string>('');
     const [sort_order, set_sort_order] = useState(1);
 
     const sorted_data = useMemo(() => {
@@ -21,23 +20,22 @@ export const STable = (props: STableProps) => {
     }, [sort_by, props.data, sort_order]);
 
     return (
-        <div className={styles.table} style={{ ...props.table_style, height: props.height, maxHeight: props.max_height, width: props.width || "auto" }}>
+        <div className={styles.table} style={{ ...props.table_style, height: props.height, maxHeight: props.max_height, width: props.width || 'auto' }}>
             {/*Header*/}
             <div className={styles.tableHeader}>
                 <div className={`${styles.tableRow} ${styles.tableHeaderRow}`}>
                     {props.columns.map((col, col_ix) => {
                         return (
-                            <div key={"Col" + col_ix} className={styles.tableCell} style={{ minWidth: col.min_width, maxWidth: col.max_width }}>
+                            <div key={'Col' + col_ix} className={styles.tableCell} style={{ minWidth: col.min_width, maxWidth: col.max_width }}>
                                 <SFlex
                                     onClick={() => {
                                         if (col.sortable) {
                                             set_sort_by(col.data_key);
                                             set_sort_order((prev) => (prev === 1 ? -1 : 1));
                                         }
-                                    }}
-                                >
+                                    }}>
                                     {col.title}
-                                    {col.sortable ? <FaSort color={sort_by === col.data_key ? (sort_order === 1 ? "green" : "red") : "gray"} /> : null}
+                                    {col.sortable ? <FaSort color={sort_by === col.data_key ? (sort_order === 1 ? 'green' : 'red') : 'gray'} /> : null}
                                 </SFlex>
                             </div>
                         );
@@ -53,10 +51,13 @@ export const STable = (props: STableProps) => {
                     <>
                         {sorted_data.map((item, item_ix) => {
                             return (
-                                <div key={"D" + item_ix} className={styles.tableRow}>
+                                <div key={'D' + item_ix} className={styles.tableRow}>
                                     {props.columns.map((col, col_ix) => {
                                         return (
-                                            <div key={"ColD" + col_ix} className={styles.tableCell} style={{ minWidth: col.min_width, maxWidth: col.max_width }}>
+                                            <div
+                                                key={'ColD' + col_ix}
+                                                className={styles.tableCell}
+                                                style={{ minWidth: col.min_width, maxWidth: col.max_width }}>
                                                 {col.render ? col.render(item) : <p>{item[col.data_key]}</p>}
                                             </div>
                                         );

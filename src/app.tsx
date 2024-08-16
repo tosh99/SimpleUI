@@ -13,6 +13,8 @@ import { SAccordion } from './base-components/s-accordion/s-accordion';
 import { FaPlus, FaUser } from 'react-icons/fa6';
 import { SToggle } from './base-components/s-toggle/s-toggle';
 import { FaTruckLoading } from 'react-icons/fa';
+import { SFileUpload } from './base-components/s-file-upload/s-file-upload';
+import { SSkeletonLoader } from './base-components/s-skeleton-loader/s-skeleton-loader';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -51,6 +53,18 @@ export function App() {
                         <SBadge>Marketing</SBadge>
                         <SBadge>B3</SBadge>
                         <SBadge>B4</SBadge>
+                    </SFlex>
+                    <br />
+                    <header>Skeleton Loader</header>
+                    <SFlex width={'100%'}>
+                        <SSkeletonLoader />
+                        <SSkeletonLoader count={5} />
+                    </SFlex>
+                    <br />
+                    <header>File Upload</header>
+                    <SFlex>
+                        <SFileUpload onFileUploaded={(file_content, file_name) => {}} render_button={<SButton>Upload Any</SButton>} />
+                        <SFileUpload accept_image onFileUploaded={(file_content, file_name) => {}} render_button={<SButton outline>Upload Image</SButton>} />
                     </SFlex>
                     <br />
                     <header>Inputs</header>

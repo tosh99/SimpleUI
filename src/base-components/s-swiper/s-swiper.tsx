@@ -2,7 +2,6 @@ import React, { ReactElement, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SFlex } from '../s-flex/s-flex';
-import styles from './s-swiper.module.scss';
 
 export const SSwiper = (props: SSwiperProps) => {
     const modules = useMemo(() => {
