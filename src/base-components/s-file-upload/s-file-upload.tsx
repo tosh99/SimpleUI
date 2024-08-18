@@ -11,14 +11,15 @@ export function SFileUpload(props: SFileUploadProps) {
             reader.onloadend = () => {
                 if (reader.result) {
                     const file_name = file.name;
+                    const file_size_in_kb = file.size / 1024;
                     const file_extension = file_name.split('.').pop();
                     if (file_extension) {
-                        props.onFileUploaded(reader.result.toString(), file_name, file_extension);
+                        props.onFileUploaded(reader.result.toString(), file_name, file_extension, file_size_in_kb);
                     }
                 }
             };
 
-            reader.readAsDataURL(file); // Reads file as Base64 encoded string
+            reader.readAsDataURL(file);
         }
     };
 
@@ -52,5 +53,5 @@ export interface SFileUploadProps {
     accept_xls?: boolean;
     accept_txt?: boolean;
     render_button: ReactNode;
-    onFileUploaded: (file_content: string, file_name: string, file_extension: string) => void;
+    onFileUploaded: (file_content: string, file_name: string, file_extension: string, file_size_in_kb: number) => void;
 }

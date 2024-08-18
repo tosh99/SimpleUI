@@ -11,7 +11,7 @@
     }
 
     textarea {
-        min-height: 120px;
+        min-height: var(--TextAreaMinHeight);
         transition: 0.3s;
         resize: vertical;
         font-size: var(--InputFontSize);
