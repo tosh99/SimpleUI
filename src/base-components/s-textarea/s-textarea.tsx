@@ -8,6 +8,7 @@ export function STextarea(props: STextareaProps) {
                 {props.label}
             </p>
             <textarea
+                style={{ minHeight: props.min_height }}
                 disabled={props.disabled}
                 value={props.value}
                 onChange={(ev) => {
@@ -24,6 +25,7 @@ export function STextarea(props: STextareaProps) {
 export interface STextareaProps {
     id?: string;
     width?: number | string;
+    min_height?: number | string;
     label?: string;
     placeholder?: string;
     disabled?: boolean;

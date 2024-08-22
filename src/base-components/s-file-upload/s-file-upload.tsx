@@ -30,6 +30,7 @@ export function SFileUpload(props: SFileUploadProps) {
         if (props.accept_pdf) accept_extensions += '.pdf';
         if (props.accept_xls) accept_extensions += '.xls,.xlsx';
         if (props.accept_txt) accept_extensions += '.txt';
+        if (props.accept_zip) accept_extensions += '.zip,.rar,.gz,.7z';
         return accept_extensions || undefined;
     }, [props.accept_image, props.accept_csv, props.accept_pdf, props.accept_xls, props.accept_txt]);
 
@@ -52,6 +53,7 @@ export interface SFileUploadProps {
     accept_pdf?: boolean;
     accept_xls?: boolean;
     accept_txt?: boolean;
+    accept_zip?: boolean;
     render_button: ReactNode;
     onFileUploaded: (file_content: string, file_name: string, file_extension: string, file_size_in_kb: number) => void;
 }
