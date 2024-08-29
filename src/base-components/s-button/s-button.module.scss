@@ -31,7 +31,9 @@
 }
 
 .simpleButton:hover {
+    color: var(--BtnSimpleHoverFontColor);
     background: var(--BtnSimpleHoverBgColor);
+    border: var(--BtnSimpleHoverBorder);
 }
 
 .outlineButton {
@@ -41,7 +43,9 @@
 }
 
 .outlineButton:hover {
+    color: var(--BtnOutlineHoverFontColor);
     background: var(--BtnOutlineHoverBgColor);
+    border: var(--BtnOutlineHoverBorder);
 }
 
 .disabledButton {

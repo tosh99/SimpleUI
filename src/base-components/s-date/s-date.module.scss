@@ -4,18 +4,22 @@
     width: 100%;
     position: relative;
 
-    p {
+    .inputLabel {
         margin-bottom: 4px;
+        color: var(--InputLabelColor);
+        font-size: var(--InputLabelFontSize);
     }
 
     input {
+        transition: 0.3s;
+        width: inherit;
+        font-family: var(--InputFontFamily), sans-serif;
         height: var(--InputHeight);
         border-radius: var(--InputBorderRadius);
         padding: var(--InputPadding);
-        transition: 0.3s;
-        border: 1px solid lightgray;
-        font-family: 'Inter Tight Variable', sans-serif;
-        width: inherit;
+        border: var(--InputBorder);
+        color: var(--InputActiveColor);
+        font-size: var(--InputFontSize);
     }
 
     input:focus {
@@ -23,11 +27,15 @@
         border: var(--InputFocusBorder);
         transition: 0.3s;
     }
+}
 
-
+input::placeholder {
+    color: var(--InputPlaceHolderColor);
 }
 
 input:disabled {
-    background: lightgray;
+    background: var(--InputDisabledBgColor);
+    color: var(--InputDisabledColor);
+    border: 1px solid var(--InputDisabledBgColor);
 }
 

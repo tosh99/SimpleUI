@@ -20,7 +20,7 @@ export function SDate(props: SDateProps) {
     return (
         <div className={styles.input} style={{ ...props.style, width: props.width || '100%' }}>
             {props.label ? (
-                <p>
+                <p className={styles.inputLabel}>
                     {props.label} {props.required ? <small style={{ color: 'red' }}>*</small> : ''}
                 </p>
             ) : null}
