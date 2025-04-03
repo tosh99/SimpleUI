@@ -2,7 +2,7 @@ import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'reac
 import styles from './s-select.module.scss';
 import { useClickAway, useDebounce, useKeyPress } from 'ahooks';
 import { TbSelector } from 'react-icons/tb';
-import { Oval } from 'react-loader-spinner';
+import ClipLoader from "react-spinners/ClipLoader";
 
 export function SSelect(props: SSelectProps) {
     const [is_open, set_is_open] = useState(false);
@@ -127,40 +127,14 @@ export function SSelect(props: SSelectProps) {
                                 set_is_open(true);
                             }}
                         />
-                        <div className={styles.selectIconSection}>
-                            {props.loading ? (
-                                <Oval
-                                    color="gray"
-                                    secondaryColor="lightgray"
-                                    visible={props.loading}
-                                    height="16"
-                                    width="16"
-                                    ariaLabel="fidget-spinner-loading"
-                                />
-                            ) : (
-                                <TbSelector />
-                            )}
-                        </div>
+                        <div className={styles.selectIconSection}>{props.loading ? <ClipLoader color="gray" size={16} /> : <TbSelector />}</div>
                     </div>
                 ) : (
                     <div className={`${styles.selectSelectedValue} ${props.value && props.value[label_key] ? '' : styles.selectPlaceHolder}`}>
                         <p title={props.value && props.value[label_key] ? props.value[label_key] : undefined}>
                             {(props.value && props.value[label_key]) || props.placeholder || 'Select'}
                         </p>
-                        <div className={styles.selectIconSection}>
-                            {props.loading ? (
-                                <Oval
-                                    color="gray"
-                                    secondaryColor="lightgray"
-                                    visible={props.loading}
-                                    height="16"
-                                    width="16"
-                                    ariaLabel="fidget-spinner-loading"
-                                />
-                            ) : (
-                                <TbSelector />
-                            )}
-                        </div>
+                        <div className={styles.selectIconSection}>{props.loading ? <ClipLoader color="gray" size={16} /> : <TbSelector />}</div>
                     </div>
                 )}
 

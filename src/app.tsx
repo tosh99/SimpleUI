@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { SPageSection } from './base-components/s-page-section/s-page-section';
-import { SImage } from './base-components/s-image/s-image';
-import { SFlex } from './base-components/s-flex/s-flex';
-import SSwiper from './base-components/s-swiper/s-swiper';
-import { SMarquee } from './base-components/s-marquee/s-marquee';
-import { SInput } from './base-components/s-input/s-input';
-import { SSelect } from './base-components/s-select/s-select';
-import { STextarea } from './base-components/s-textarea/s-textarea';
-import { SButton } from './base-components/s-button/s-button';
-import { SBadge } from './base-components/s-badge/s-badge';
+import { FaPlus } from 'react-icons/fa6';
 import { SAccordion } from './base-components/s-accordion/s-accordion';
-import { FaPlus, FaUser } from 'react-icons/fa6';
-import { SToggle } from './base-components/s-toggle/s-toggle';
-import { FaTruckLoading } from 'react-icons/fa';
+import { SBadge } from './base-components/s-badge/s-badge';
+import { SButton } from './base-components/s-button/s-button';
 import { SFileUpload } from './base-components/s-file-upload/s-file-upload';
+import { SFlex } from './base-components/s-flex/s-flex';
+import { SImage } from './base-components/s-image/s-image';
+import { SInput } from './base-components/s-input/s-input';
+import { SLoader } from './base-components/s-loader/s-loader';
+import { SMarquee } from './base-components/s-marquee/s-marquee';
+import { SPageSection } from './base-components/s-page-section/s-page-section';
+import { SSelect } from './base-components/s-select/s-select';
 import { SSkeletonLoader } from './base-components/s-skeleton-loader/s-skeleton-loader';
+import SSwiper from './base-components/s-swiper/s-swiper';
+import { STextarea } from './base-components/s-textarea/s-textarea';
+import { SToggle } from './base-components/s-toggle/s-toggle';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -39,9 +39,12 @@ export function App() {
                     <p>Paragraph</p>
                     <a>Hyperlink</a>
                     <br />
+                    <header>Loader</header>
+                    <SLoader size={16} />
+                    <br />
                     <header>Buttons</header>
                     <SFlex>
-                        <SButton>Button Normal</SButton>
+                        <SButton loading={true}>Button Normal</SButton>
                         <SButton simple>Button Simple</SButton>
                         <SButton outline>Button Outline</SButton>
                         <SButton disabled>Button Disabled</SButton>
@@ -84,7 +87,7 @@ export function App() {
                     <br />
                     <header>Select</header>
                     <SFlex width={'100%'} wrap>
-                        <SSelect label={'Normal'} options={options} />
+                        <SSelect label={'Normal'} options={options} loading={true} />
                         <SSelect label={'Searchable'} options={options} searchable />
                         <SSelect label={'Searchable, Loading & Selected'} options={options} searchable value={opt} loading={true} />
                         <SSelect label={'Disabled'} options={options} disabled />

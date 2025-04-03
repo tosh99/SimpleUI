@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import styles from './s-button.module.scss';
 import { SFlex } from '../s-flex/s-flex';
+import ClipLoader from "react-spinners/ClipLoader";
 
 export function SButton(props: SButtonProps) {
     return (
@@ -16,6 +17,7 @@ export function SButton(props: SButtonProps) {
             }}>
             {props.icon_left ? <div className={styles.iconLeft}>{props.icon_left}</div> : null}
             <p className={styles.buttonText}>{props.children}</p>
+            {props.loading ? <ClipLoader color="gray" size={16} /> : null}
             {props.icon_right ? <div className={styles.iconRight}>{props.icon_right}</div> : null}
         </SFlex>
     );
@@ -31,4 +33,5 @@ export interface SButtonProps {
     simple?: boolean;
     outline?: boolean;
     disabled?: boolean;
+    loading?:boolean;
 }

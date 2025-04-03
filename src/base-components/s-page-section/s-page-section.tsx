@@ -38,7 +38,7 @@ export const SPageSection = (props: SPageSectionProps) => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: props.animateOnce, amount: props.viewPerTrigger || 0.2 }}
-                    transition={{ delay: 0.25 || props.delay, duration: props.duration || 1.5 }}
+                    transition={{ delay: props.delay || 0.25, duration: props.duration || 1.5 }}
                     id={props.id ? props.id : undefined}
                     className={`${styles.sectionPage} ${props.className}`}
                     style={parent_style}>

@@ -17,3 +17,4 @@ export { SAccordion } from './base-components/s-accordion/s-accordion';
 export { SToggle } from './base-components/s-toggle/s-toggle';
 export { SSkeletonLoader } from './base-components/s-skeleton-loader/s-skeleton-loader';
 export { SFileUpload } from './base-components/s-file-upload/s-file-upload';
+export { SLoader } from './base-components/s-loader/s-loader';

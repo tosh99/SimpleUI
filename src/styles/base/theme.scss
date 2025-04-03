@@ -1,79 +1,87 @@
-@import "theme_font";
-@import "theme_scroll";
+@use "theme_font";
+@use "theme_scroll";
 
 :root {
     // Common Internal Variables
     --BorderRadius: 8px;
-    --PlaceHolderColor: gray;
-    --DisabledBgColor: lightgray;
-    --DisabledFontColor: gray;
+    --PlaceHolderColor: hsl(240 5% 64.9%);
+    --DisabledBgColor: hsl(240 4.8% 95.9%);
+    --DisabledFontColor: hsl(240 3.8% 46.1%);
     --InputHeight: 34px;
     --InputFontSize: 14px;
     --InputLabelFontSize: 13px;
-    --InputLabelColor: #353535;
+    --InputLabelColor: hsl(240 5.9% 10%);
 
-    //Page
+    // Page
     --PageHPadding: 100px;
     --PageVPadding: 100px;
-    --PageBottomBorder: 1px solid #eaeaea;
+    --PageBottomBorder: 1px solid hsl(240 4.8% 95.9%);
     --PageSectionMinInnerWidth: 1280px;
 
-    //Badge
-    --BadgeBorder: 1px solid #eaeaea;
+    // Badge
+    --BadgeBorder: 1px solid hsl(240 4.8% 95.9%);
     --BadgeBorderRadius: var(--BorderRadius);
-    --BadgeBgColor: #F7F7F7;
+    --BadgeBgColor: hsl(240 5.9% 90%);
     --BadgePadding: 8px 10px;
     --BadgeFontSize: 13px;
     --BadgeFontWeight: 500;
 
-    //Button
+    // Button Common
     --BtnHeight: var(--InputHeight);
     --BtnPadding: 0 16px;
     --BtnBorderRadius: var(--BorderRadius);
     --BtnFontSize: 12px;
-    --BtnActiveBgColor: black;
-    --BtnActiveHoverBgColor: #5c5c5c;
-    --BtnActiveFontColor: white;
+
+    // Button Active
+    --BtnActiveBgColor: hsl(240 5.9% 10%);
+    --BtnActiveHoverBgColor: hsl(240 4.8% 20%);
+    --BtnActiveFontColor: hsl(240 5% 97.8%);
     --BtnActiveBorder: 1px solid transparent;
-    --BtnOutlineBgColor: white;
-    --BtnOutlineFontColor: black;
-    --BtnOutlineBorder: 1px solid gray;
-    --BtnOutlineHoverBgColor: #cacaca;
-    --BtnOutlineHoverFontColor: black;
-    --BtnOutlineHoverBorder: #cacaca;
-    --BtnSimpleBgColor: white;
-    --BtnSimpleFontColor: black;
-    --BtnSimpleBorder: 1px solid transparent;
-    --BtnSimpleHoverBgColor: #cacaca;
-    --BtnSimpleHoverFontColor: black;
-    --BtnSimpleHoverBorder: #cacaca;
+
+    // Button Outline
+    --BtnOutlineBgColor: hsl(240 5% 97.8%);
+    --BtnOutlineFontColor: hsl(240 5.9% 10%);
+    --BtnOutlineBorder: 1px solid hsl(240 5% 64.9%);
+    --BtnOutlineHoverBgColor: hsl(240 4.8% 95.9%);
+    --BtnOutlineHoverFontColor: hsl(240 5.9% 10%);
+    --BtnOutlineHoverBorder: 1px solid hsl(240 3.8% 46.1%);
+
+    // Button Simple / No Outline
+    --BtnSimpleBgColor: hsl(240 5% 97.8%);
+    --BtnSimpleFontColor: hsl(240 5.9% 10%);
+    --BtnSimpleBorder: 1px solid hsl(240 5% 97.8%);
+    --BtnSimpleHoverBgColor: hsl(240 4.9% 83.9%);
+    --BtnSimpleHoverFontColor: hsl(240 5.9% 10%);
+    --BtnSimpleHoverBorder: 1px solid hsl(240 4.8% 95.9%);
+
+    // Button Font
     --BtnFontFamily: 'Work Sans Variable';
     --BtnDisabledBgColor: var(--DisabledBgColor);
     --BtnDisabledColor: var(--DisabledFontColor);
 
-    //Input
+    // Input
     --InputBorderRadius: var(--BorderRadius);
     --InputPlaceHolderColor: var(--PlaceHolderColor);
     --InputDisabledColor: var(--DisabledFontColor);
     --InputDisabledBgColor: var(--DisabledBgColor);
     --InputPadding: 0 12px;
-    --InputBorder: 1px solid #bcbcbc;
-    --InputFocusBorder: 1px solid #676767;
-    --InputActiveColor: black;
-    --InputFocusColor: black;
+    --InputBorder: 1px solid hsl(240 5.9% 90%);
+    --InputFocusBorder: 1px solid hsl(240 5% 64.9%);
+    --InputActiveColor: hsl(240 5.9% 10%);
+    --InputFocusColor: hsl(240 5.9% 10%);
     --InputFontFamily: 'Work Sans Variable';
 
-    //Select
+    // Select
     --SelectHeight: var(--InputHeight);
-    --SelectBgColor: white;
+    --SelectBgColor: hsl(240 5% 97.8%);
     --SelectFontSize: var(--InputFontSize);
-    --SelectOptionBgColor: #eaeaea;
+    --SelectOptionBgColor: hsl(240 5.9% 90%);
     --SelectOptionFontSize: 14px;
-    --SelectOptionSelectedBgColor: #bdbdbd;
+    --SelectOptionSelectedBgColor: hsl(240 5.9% 90%);
     --SelectLabelColor: var(--InputLabelColor);
     --SelectLabelFontSize: var(--InputLabelFontSize);
 
-    //TextArea
+    // Textarea
     --TextAreaPadding: 12px;
     --TextAreaMinHeight: 120px;
     --TextAreaLabelColor: var(--InputLabelColor);
