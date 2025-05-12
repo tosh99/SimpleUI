@@ -9,7 +9,7 @@ export function SButton(props: SButtonProps) {
             align={'center'}
             justify={'center'}
             style={{ ...props.style, width: props.is_full_width ? '100%' : 'max-content' }}
-            className={`${styles.button} ${props.outline ? styles.outlineButton : ''} ${props.simple ? styles.simpleButton : ''} ${props.disabled ? styles.disabledButton : ''}`}
+            className={`${styles.button} ${props.variant === 'secondary' ? styles.secondaryButton : ''} ${props.variant === 'outline' ? styles.outlineButton : ''} ${props.variant === 'ghost' ? styles.simpleButton : ''} ${props.disabled ? styles.disabledButton : ''}`}
             onClick={() => {
                 if (props.onClick) {
                     props.onClick();
@@ -30,8 +30,7 @@ export interface SButtonProps {
     is_full_width?: boolean;
     icon_left?: ReactNode;
     icon_right?: ReactNode;
-    simple?: boolean;
-    outline?: boolean;
     disabled?: boolean;
     loading?:boolean;
+    variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
 }

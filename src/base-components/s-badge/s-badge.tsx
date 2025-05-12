@@ -12,6 +12,7 @@ export function SBadge(props: SBadgeProps) {
                 background: props.background,
                 color: props.color,
                 boxShadow: props.boxShadow,
+                ...props.style,
             }}>
             <p>{props.children}</p>
         </SFlex>
@@ -24,4 +25,5 @@ export interface SBadgeProps {
     color?: string;
     boxShadow?: string;
     border?: string;
+    style?: React.CSSProperties;
 }

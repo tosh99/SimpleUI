@@ -1,5 +1,5 @@
 .switch {
-    background-color: gray;
+    background-color: var(--SwitchBgColor);
     align-items: center;
     padding: 5px;
     border-radius: 15px;
@@ -10,7 +10,7 @@
 
 .switchOn {
     justify-content: flex-end;
-    background-color: green;
+    background-color: var(--SwitchOnBgColor);
 }
 
 .handle {

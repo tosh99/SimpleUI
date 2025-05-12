@@ -20,6 +20,7 @@
         border: var(--InputBorder);
         color: var(--InputActiveColor);
         font-size: var(--InputFontSize);
+        background-color: var(--InputBgColor);
     }
 
     input:focus {

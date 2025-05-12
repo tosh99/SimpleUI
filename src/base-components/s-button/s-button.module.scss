@@ -24,6 +24,18 @@
     transition: 0.3s;
 }
 
+.secondaryButton {
+    color: var(--BtnSecondaryFontColor);
+    background: var(--BtnSecondaryBgColor);
+    border: var(--BtnSecondaryBorder);
+}
+
+.secondaryButton:hover {
+    color: var(--BtnSecondaryHoverFontColor);
+    background: var(--BtnSecondaryHoverBgColor);
+    border: var(--BtnSecondaryHoverBorder);
+}
+
 .simpleButton {
     color: var(--BtnSimpleFontColor);
     background: var(--BtnSimpleBgColor);

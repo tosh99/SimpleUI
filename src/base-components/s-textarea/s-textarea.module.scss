@@ -19,6 +19,7 @@
         padding: var(--TextAreaPadding);
         border: var(--InputBorder);
         font-family: var(--InputFontFamily), sans-serif;
+        background-color: var(--InputBgColor);
     }
 
     textarea:focus {

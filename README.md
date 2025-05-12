@@ -1,79 +1,155 @@
 # ✨ SimpleUI - A Clean and Simple UI Library for React ✨
 
-[![npm version](https://badge.fury.io/js/react-simple-ui-lib.svg)](https://badge.fury.io/js/react-simple-ui-lib)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-`react-simple-ui-lib` provides a set of clean, simple, and customizable React components designed to be straightforward and easy to integrate. No fuss, just the essentials.
-
----
-
-## 🚀 Features
-
-*   **Simple & Clean:** Focused components without unnecessary complexity.
-*   **Lightweight:** Minimal dependencies for faster load times. ([Check Bundle Size](https://bundlephobia.com/package/react-simple-ui-lib))
-*   **Customizable:** Easily theme components using CSS variables.
-*   **Modern React:** Built with React 19.
-*   **TypeScript:** Fully typed for a better development experience.
-
----
+`SimpleUI` provides a set of clean, simple, and customizable React components designed to be straightforward and easy to integrate. No fuss, just the essentials.
 
 ## 📦 Installation
 
-You can install `react-simple-ui-lib` using your preferred package manager:
-
 ```bash
-# pnpm
-pnpm add react-simple-ui-lib
+# Clone the repository
+git clone https://github.com/your-username/SimpleUI.git
 
-# npm
-npm install react-simple-ui-lib
+# Install dependencies
+pnpm install
 
-# yarn
-yarn add react-simple-ui-lib
+# Run the development server
+pnpm dev
 ```
 
----
+## 🧩 Component Parameters
 
-## 🛠️ Basic Usage
+### SFlex
+```typescript
+interface SFlexProps {
+  children?: ReactNode;               // Child elements to render
+  className?: string;                // Additional CSS classes
+  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+  justify?: 'start' | 'end' | 'center' | 'space-between';
+  align?: 'start' | 'end' | 'center' | 'baseline' | 'stretch';
+  style?: CSSProperties;             // Additional inline styles
+  wrap?: boolean;                    // Whether to wrap content
+  gap?: number;                      // Gap between child elements
+  width?: number | string;           // Container width
+  height?: number | string;          // Container height
+  margin?: number | string;          // Container margin
+  marginTop?: string | number;       // Top margin
+  marginBottom?: string | number;    // Bottom margin
+  padding?: number | string;         // Container padding
+  paddingTop?: number | string;      // Top padding
+  paddingBottom?: number | string;   // Bottom padding
+  onClick?: () => void;              // Click handler
+}
+```
 
-Import the components you need and use them in your React application.
+### SButton
+```typescript
+interface SButtonProps {
+  children: ReactNode;               // Button text/content
+  onClick?: () => void;              // Click handler
+  style?: CSSProperties;             // Additional inline styles
+  is_full_width?: boolean;           // Whether button takes full width
+  icon_left?: ReactNode;             // Icon to show on the left
+  icon_right?: ReactNode;            // Icon to show on the right
+  disabled?: boolean;                // Disable the button
+  loading?: boolean;                 // Show loading state
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline'; // Button style variant
+}
+```
 
-```tsx
-import React from 'react';
-import { SButton, SBadge } from 'react-simple-ui-lib';
-// Make sure to import the base styles if needed, or customize them!
-// import 'react-simple-ui-lib/dist/index.css'; // Assuming base styles are provided
+### SInput
+```typescript
+interface SInputProps {
+  id?: string;                      // Input ID
+  label?: string;                   // Input label
+  label_style?: CSSProperties;      // Label styles
+  width?: number | string;          // Input width
+  placeholder?: string;             // Placeholder text
+  disabled?: boolean;               // Disable the input
+  required?: boolean;               // Mark as required
+  style?: CSSProperties;            // Container styles
+  input_style?: CSSProperties;      // Input element styles
+  value?: string | number;          // Input value
+  is_full_width?: boolean;          // Whether input takes full width
+  debounce_ms?: number;             // Debounce time in milliseconds
+  onChange?: (value: string) => void; // Value change handler
+  onSearch?: (value: string) => void; // Debounced search handler
+}
+```
 
-function MyApp() {
-  return (
-    <div>
-      <SButton variant="primary" onClick={() => alert('Button Clicked!')}>
-        Click Me
-      </SButton>
-      <SBadge>New Feature</SBadge>
-    </div>
-  );
+### STextarea
+```typescript
+interface STextareaProps {
+  id?: string;                      // Textarea ID
+  width?: number | string;          // Width of the textarea
+  min_height?: number | string;     // Minimum height of the textarea
+  label?: string;                   // Label text
+  placeholder?: string;             // Placeholder text
+  disabled?: boolean;               // Disable the textarea
+  style?: CSSProperties;            // Container styles
+  label_style?: CSSProperties;      // Label styles
+  value?: string | number;          // Textarea value
+  onChange?: (value: string) => void; // Value change handler
+}
+```
+
+### SToggle
+```typescript
+interface SToggleProps {
+  on_text?: string;                 // Text to display when toggle is on
+  off_text?: string;                // Text to display when toggle is off
+  is_on?: boolean;                  // Toggle state
+  onToggle?: () => void;            // Toggle change handler
+}
+```
+
+### STabs
+```typescript
+interface STabsProps {
+  tabs: STab[];                     // Array of tab items
+  onTabClick: (index: number) => void; // Tab selection handler
+  tab_key?: number | string;        // Currently active tab key
+  tab_style?: CSSProperties;        // Styles for the tabs container
+  tab_item_style?: CSSProperties;   // Styles for individual tab items
 }
 
-export default MyApp;
+interface STab {
+  label: ReactNode;                 // Tab label
+  children?: ReactNode;             // Tab content
+}
 ```
 
----
+### SBadge
+```typescript
+interface SBadgeProps {
+  children?: ReactNode;             // Badge content
+  background?: string;              // Background color
+  color?: string;                   // Text color
+  boxShadow?: string;               // Box shadow
+  border?: string;                  // Border style
+  style?: CSSProperties;            // Additional inline styles
+}
+```
 
-## 🧩 Components
+### SLoader
+```typescript
+interface SLoaderProps {
+  size?: number;                    // Size of the loader in pixels
+}
+```
 
-Here is a list of available components (Expand as needed):
-
-*   `SBadge`: Simple badge component.
-*   `SButton`: Versatile button component.
-*   `SCheckbox`: Checkbox input.
-*   `SFlex`: Flexbox layout helper.
-*   `SLoader`: Loading indicator.
-*   `SInput`: Text input component.
-*   `SSelect`: Select dropdown component.
-*   `STextArea`: Text area component.
-
-*(Optional: Link to Storybook or detailed component documentation if available)*
+### SModal
+```typescript
+interface SModalProps {
+  children: ReactNode;              // Modal content
+  minHeight?: number;               // Minimum height of modal content
+  width?: number;                   // Width of the modal
+  headerButtons?: ReactNode;        // Additional buttons for header
+  title: string;                    // Modal title
+  opened?: boolean;                 // Whether modal is visible
+  onClose: () => void;              // Close handler
+}
+```
 
 ---
 

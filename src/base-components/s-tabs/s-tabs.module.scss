@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: var(--TabBorder);
+    background: var(--TabBgColor);
 }
 
 .tab {
@@ -11,13 +12,15 @@
     padding: 8px 16px;
     border-bottom: 3px solid transparent;
     cursor: pointer;
+    color: var(--TabFontColor);
 }
 
 .tabSelected {
-    border-bottom: 3px solid var(--GDarkAccent);
+    border-bottom: var(--TabSelectedBorder);
     cursor: text;
     pointer-events: none;
-    background: #efecf1;
+    background: var(--TabSelectedBgColor);
+    color: var(--TabSelectedFontColor);
 }
 
 @media only screen and (max-width: 700px) {

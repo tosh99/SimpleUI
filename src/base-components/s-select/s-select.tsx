@@ -3,10 +3,41 @@ import styles from './s-select.module.scss';
 import { useClickAway, useDebounce, useKeyPress } from 'ahooks';
 import { TbSelector } from 'react-icons/tb';
 import ClipLoader from "react-spinners/ClipLoader";
+import { nanoid } from 'nanoid';
+
+// Global tracking for open select dropdown
+let OPEN_DROPDOWN_ID: string | null = null;
 
 export function SSelect(props: SSelectProps) {
+    const select_id = useRef<string>(nanoid());
     const [is_open, set_is_open] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
+    
+    // Listen for global dropdown open/close events
+    useEffect(() => {
+        const handleSelectOpen = (event: CustomEvent) => {
+            if (event.detail !== select_id.current && is_open) {
+                set_is_open(false);
+                set_highlight_index(0);
+            }
+        };
+        
+        window.addEventListener('select-dropdown-opened' as any, handleSelectOpen);
+        
+        return () => {
+            window.removeEventListener('select-dropdown-opened' as any, handleSelectOpen);
+        };
+    }, [is_open]);
+    
+    // Notify other dropdowns when this one opens
+    useEffect(() => {
+        if (is_open) {
+            OPEN_DROPDOWN_ID = select_id.current;
+            window.dispatchEvent(new CustomEvent('select-dropdown-opened', { detail: select_id.current }));
+        } else if (OPEN_DROPDOWN_ID === select_id.current) {
+            OPEN_DROPDOWN_ID = null;
+        }
+    }, [is_open]);
 
     useClickAway(() => {
         set_is_open(false);
@@ -106,7 +137,7 @@ export function SSelect(props: SSelectProps) {
                     if (props.searchable) {
                         set_is_open(true);
                     } else {
-                        set_is_open((prev) => !prev);
+                        set_is_open(!is_open);
                     }
                 }}>
                 {props.searchable ? (

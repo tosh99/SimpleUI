@@ -15,6 +15,7 @@ import { SSkeletonLoader } from './base-components/s-skeleton-loader/s-skeleton-
 import SSwiper from './base-components/s-swiper/s-swiper';
 import { STextarea } from './base-components/s-textarea/s-textarea';
 import { SToggle } from './base-components/s-toggle/s-toggle';
+import { STabs } from './base-components/s-tabs/s-tabs';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -25,9 +26,19 @@ export function App() {
     const [opt, set_opt] = useState(options[0]);
     const [is_on, set_is_on] = useState(true);
 
+    const [theme, set_theme] = useState<'light' | 'dark'>('dark');
+
     return (
         <>
-            <SPageSection disableAnimation height={'auto'}>
+            <SPageSection background={theme === 'dark' ? 'black' : 'white'} disableAnimation height={'auto'}>
+                <SToggle
+                    off_text="Light"
+                    on_text="Dark"
+                    is_on={theme === 'dark'}
+                    onToggle={() => {
+                        set_theme((prev) => (prev === 'light' ? 'dark' : 'light'));
+                    }}
+                />
                 <SFlex direction={'column'}>
                     <header>Headings</header>
                     <h1>H1</h1>
@@ -45,8 +56,9 @@ export function App() {
                     <header>Buttons</header>
                     <SFlex>
                         <SButton loading={true}>Button Normal</SButton>
-                        <SButton simple>Button Simple</SButton>
-                        <SButton outline>Button Outline</SButton>
+                        <SButton variant={'secondary'}>Button Secondary</SButton>
+                        <SButton variant={'ghost'}>Button Ghost</SButton>
+                        <SButton variant={'outline'}>Button Outline</SButton>
                         <SButton disabled>Button Disabled</SButton>
                     </SFlex>
                     <br />
@@ -64,10 +76,13 @@ export function App() {
                         <SSkeletonLoader count={5} />
                     </SFlex>
                     <br />
+                    <header>Tabs</header>
+                    <STabs tab_key={0} tabs={[{ label: 'Tab 1' }, { label: 'Tab 2' }, { label: 'Tab 3' }]} onTabClick={(tab) => {}} />
+                    <br />
                     <header>File Upload</header>
                     <SFlex>
                         <SFileUpload onFileUploaded={(file_content, file_name) => {}} render_button={<SButton>Upload Any</SButton>} />
-                        <SFileUpload accept_image onFileUploaded={(file_content, file_name) => {}} render_button={<SButton outline>Upload Image</SButton>} />
+                        <SFileUpload accept_image onFileUploaded={(file_content, file_name) => {}} render_button={<SButton variant={'outline'}>Upload Image</SButton>} />
                     </SFlex>
                     <br />
                     <header>Inputs</header>

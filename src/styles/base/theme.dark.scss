@@ -1,41 +1,57 @@
-html, body, input, header, span, p, button, div, section, h1, h2, h3, h4, h5, h6, small, big {
+html,
+body,
+input,
+header,
+span,
+p,
+button,
+div,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big {
     font-family: 'Work Sans Variable', sans-serif;
 }
 
 :root {
     // Common Internal Variables
     --BorderRadius: 8px;
-    --PlaceHolderColor: hsl(240 5% 64.9%);
-    --DisabledBgColor: hsl(240 4.8% 95.9%);
-    --DisabledFontColor: hsl(240 3.8% 46.1%);
+    --PlaceHolderColor: hsl(240 5% 45%);
+    --DisabledBgColor: hsl(240 5% 20%);
+    --DisabledFontColor: hsl(240 5% 60%);
     --InputHeight: 34px;
     --InputFontSize: 14px;
     --InputLabelFontSize: 13px;
-    --InputLabelColor: hsl(240 5.9% 10%);
-    --InputBgColor: hsl(0, 0%, 92%);
+    --InputLabelColor: hsl(240 5% 80%);
+    --InputBgColor: hsl(240 5% 25%);
 
     // Page
     --PageHPadding: 100px;
     --PageVPadding: 100px;
-    --PageBottomBorder: 1px solid hsl(240 4.8% 95.9%);
+    --PageBottomBorder: 1px solid hsl(240 5% 20%);
     --PageSectionMinInnerWidth: 1280px;
 
     // Toggle
-    --SwitchBgColor: hsl(240 5% 97.8%);
+    --SwitchBgColor: hsl(240 5% 25%);
     --SwitchOnBgColor: hsl(240 5% 10%);
 
     // Tabs
-    --TabBgColor: hsl(240 5% 97.8%);
-    --TabSelectedBgColor: hsl(240 5% 10%);
-    --TabFontColor: hsl(240 5.9% 10%);
+    --TabBgColor: hsl(240 5% 25%);
+    --TabSelectedBgColor: hsl(240 5% 20%);
+    --TabFontColor: hsl(240 5% 80%);
     --TabSelectedFontColor: hsl(240 5% 97.8%);
-    --TabBorder: 1px solid hsl(240 4.8% 95.9%);
+    --TabBorder: 1px solid hsl(240 5% 20%);
     --TabSelectedBorder: 3px solid hsl(240 5% 10%);
 
     // Badge
-    --BadgeBorder: 1px solid hsl(240 4.8% 95.9%);
+    --BadgeBorder: 1px solid hsl(240 5% 30%);
     --BadgeBorderRadius: var(--BorderRadius);
-    --BadgeBgColor: hsl(240 5.9% 90%);
+    --BadgeBgColor: hsl(240 5% 25%);
     --BadgePadding: 8px 10px;
     --BadgeFontSize: 13px;
     --BadgeFontWeight: 500;
@@ -47,34 +63,34 @@ html, body, input, header, span, p, button, div, section, h1, h2, h3, h4, h5, h6
     --BtnFontSize: 12px;
 
     // Button Secondary
-    --BtnSecondaryBgColor: hsl(240 5% 97.8%);
-    --BtnSecondaryFontColor: hsl(240 5.9% 10%);
-    --BtnSecondaryBorder: 1px solid hsl(240 5% 64.9%);
-    --BtnSecondaryHoverBgColor: hsl(240 4.8% 95.9%);
-    --BtnSecondaryHoverFontColor: hsl(240 5.9% 10%);
-    --BtnSecondaryHoverBorder: 1px solid hsl(240 3.8% 46.1%);
+    --BtnSecondaryBgColor: hsl(240 5% 25%);
+    --BtnSecondaryFontColor: hsl(240 5% 85%);
+    --BtnSecondaryBorder: 1px solid hsl(240 5% 35%);
+    --BtnSecondaryHoverBgColor: hsl(240 5% 30%);
+    --BtnSecondaryHoverFontColor: hsl(240 5% 90%);
+    --BtnSecondaryHoverBorder: 1px solid hsl(240 5% 45%);
 
     // Button Active
-    --BtnActiveBgColor: hsl(240 5.9% 10%);
-    --BtnActiveHoverBgColor: hsl(240 4.8% 20%);
-    --BtnActiveFontColor: hsl(240 5% 97.8%);
+    --BtnActiveBgColor: hsl(240 5% 35%);
+    --BtnActiveHoverBgColor: hsl(240 5% 40%);
+    --BtnActiveFontColor: hsl(240 5% 95%);
     --BtnActiveBorder: 1px solid transparent;
 
     // Button Outline
-    --BtnOutlineBgColor: hsl(240 5% 97.8%);
-    --BtnOutlineFontColor: hsl(240 5.9% 10%);
-    --BtnOutlineBorder: 1px solid hsl(240 5% 64.9%);
-    --BtnOutlineHoverBgColor: hsl(240 4.8% 95.9%);
-    --BtnOutlineHoverFontColor: hsl(240 5.9% 10%);
-    --BtnOutlineHoverBorder: 1px solid hsl(240 3.8% 46.1%);
+    --BtnOutlineBgColor: transparent;
+    --BtnOutlineFontColor: hsl(240 5% 80%);
+    --BtnOutlineBorder: 1px solid hsl(240 5% 40%);
+    --BtnOutlineHoverBgColor: hsl(240 5% 20%);
+    --BtnOutlineHoverFontColor: hsl(240 5% 90%);
+    --BtnOutlineHoverBorder: 1px solid hsl(240 5% 50%);
 
     // Button Simple / No Outline
-    --BtnSimpleBgColor: hsl(240 5% 97.8%);
-    --BtnSimpleFontColor: hsl(240 5.9% 10%);
-    --BtnSimpleBorder: 1px solid hsl(240 5% 97.8%);
-    --BtnSimpleHoverBgColor: hsl(240 4.9% 83.9%);
-    --BtnSimpleHoverFontColor: hsl(240 5.9% 10%);
-    --BtnSimpleHoverBorder: 1px solid hsl(240 4.8% 95.9%);
+    --BtnSimpleBgColor: hsl(240 5% 20%);
+    --BtnSimpleFontColor: hsl(240 5% 80%);
+    --BtnSimpleBorder: 1px solid hsl(240 5% 20%);
+    --BtnSimpleHoverBgColor: hsl(240 5% 25%);
+    --BtnSimpleHoverFontColor: hsl(240 5% 90%);
+    --BtnSimpleHoverBorder: 1px solid hsl(240 5% 25%);
 
     // Button Font
     --BtnFontFamily: 'Work Sans Variable';
@@ -87,19 +103,19 @@ html, body, input, header, span, p, button, div, section, h1, h2, h3, h4, h5, h6
     --InputDisabledColor: var(--DisabledFontColor);
     --InputDisabledBgColor: var(--DisabledBgColor);
     --InputPadding: 0 12px;
-    --InputBorder: 1px solid hsl(240 5.9% 90%);
-    --InputFocusBorder: 1px solid hsl(240 5% 64.9%);
-    --InputActiveColor: hsl(240 5.9% 10%);
-    --InputFocusColor: hsl(240 5.9% 10%);
+    --InputBorder: 1px solid hsl(240 5% 30%);
+    --InputFocusBorder: 1px solid hsl(240 5% 45%);
+    --InputActiveColor: hsl(240 5% 85%);
+    --InputFocusColor: hsl(240 5% 85%);
     --InputFontFamily: 'Work Sans Variable';
 
     // Select
     --SelectHeight: var(--InputHeight);
     --SelectBgColor: var(--InputBgColor);
     --SelectFontSize: var(--InputFontSize);
-    --SelectOptionBgColor: hsl(240 5.9% 90%);
+    --SelectOptionBgColor: hsl(240 5% 22%);
     --SelectOptionFontSize: 14px;
-    --SelectOptionSelectedBgColor: hsl(240 5.9% 90%);
+    --SelectOptionSelectedBgColor: hsl(240 5% 30%);
     --SelectLabelColor: var(--InputLabelColor);
     --SelectLabelFontSize: var(--InputLabelFontSize);
 
@@ -118,16 +134,29 @@ html, body, input, header, span, p, button, div, section, h1, h2, h3, h4, h5, h6
     }
 }
 
-
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Work Sans Variable', sans-serif
+    font-family: 'Work Sans Variable', sans-serif;
+    background-color: hsl(240 5% 10%);
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+header,
+span,
+a {
+    color: hsl(240 5% 85%);
 }
