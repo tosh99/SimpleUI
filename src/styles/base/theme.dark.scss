@@ -133,6 +133,9 @@ big {
     --ModalBackgroundColor: hsl(240 5% 25%);
     --ModalMaxWidth: 90%;
     --ModalMaxHeight: calc(100% - 80px);
+    --ModalBorderRadius: 10px;
+    --ModalPadding: 20px;
+    --ModalHeaderColor: hsl(240 5% 85%);
 }
 
 //Mobile

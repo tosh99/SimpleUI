@@ -9,13 +9,12 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: rgba(0, 0, 0, 0.2);
 
     .modal {
-        margin-top: 40px;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
+        padding: var(--ModalPadding);
+        border-radius: var(--ModalBorderRadius);
         width: var(--ModalMaxWidth);
         height: var(--ModalMaxHeight);
         max-width: var(--ModalMaxWidth);
@@ -29,6 +28,7 @@
 
             .modalHeaderText {
                 font-size: 22px;
+                color: var(--ModalHeaderColor);
             }
         }
 
@@ -41,5 +41,4 @@
 }
 
 @media screen {
-
 }

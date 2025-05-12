@@ -1,7 +1,7 @@
 {
     "name": "react-simple-ui-lib",
     "description": "A Clean and Simple UI Library for React",
-    "version": "0.4.7",
+    "version": "0.4.8",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
