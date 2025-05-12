@@ -128,6 +128,11 @@ big {
     --TextAreaMinHeight: 120px;
     --TextAreaLabelColor: var(--InputLabelColor);
     --TextAreaLabelFontSize: var(--InputLabelFontSize);
+
+    // Modal
+    --ModalBackgroundColor: hsl(240 5% 25%);
+    --ModalMaxWidth: 90%;
+    --ModalMaxHeight: calc(100% - 80px);
 }
 
 //Mobile

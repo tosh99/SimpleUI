@@ -14,12 +14,13 @@
     .modal {
         margin-top: 40px;
         background: white;
-        height: max-content;
-        max-height: calc(100% - 80px);
         padding: 20px;
         border-radius: 10px;
-        width: 568px;
-        max-width: 90%;
+        width: var(--ModalMaxWidth);
+        height: var(--ModalMaxHeight);
+        max-width: var(--ModalMaxWidth);
+        max-height: var(--ModalMaxHeight);
+        background-color: var(--ModalBackgroundColor);
 
         .modalHeader {
             display: flex;

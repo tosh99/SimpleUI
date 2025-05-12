@@ -17,6 +17,7 @@ import { STextarea } from './base-components/s-textarea/s-textarea';
 import { SToggle } from './base-components/s-toggle/s-toggle';
 import { STabs } from './base-components/s-tabs/s-tabs';
 import { SCheckbox } from './base-components/s-checkbox/s-checkbox';
+import { SModal } from './base-components/s-modal/s-modal';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -26,6 +27,7 @@ const options = [
 export function App() {
     const [opt, set_opt] = useState(options[0]);
     const [is_on, set_is_on] = useState(true);
+    const [is_modal_opened, set_is_modal_opened] = useState(false);
 
     const [theme, set_theme] = useState<'light' | 'dark'>('dark');
 
@@ -54,6 +56,22 @@ export function App() {
                     <header>Loader</header>
                     <SLoader size={16} />
                     <br />
+                    <header>Modal</header>
+                    <SButton
+                        onClick={() => {
+                            set_is_modal_opened(true);
+                        }}>
+                        Open Modal
+                    </SButton>
+                    <SModal
+                        opened={is_modal_opened}
+                        onClose={() => {
+                            set_is_modal_opened(false);
+                        }}
+                        title="Modal Title">
+                        <p>Modal Content</p>
+                    </SModal>
+                    <br />
                     <header>Buttons</header>
                     <SFlex>
                         <SButton loading={true}>Button Normal</SButton>
@@ -78,8 +96,12 @@ export function App() {
                     </SFlex>
                     <br />
                     <header>Checkbox</header>
-                    <SCheckbox checked={false} onChange={(checked) => console.log('Checkbox state:', checked)}>I am off checkbox</SCheckbox>
-                    <SCheckbox checked={true} onChange={(checked) => console.log('Checkbox state:', checked)}>I am on checkbox</SCheckbox>
+                    <SCheckbox checked={false} onChange={(checked) => console.log('Checkbox state:', checked)}>
+                        I am off checkbox
+                    </SCheckbox>
+                    <SCheckbox checked={true} onChange={(checked) => console.log('Checkbox state:', checked)}>
+                        I am on checkbox
+                    </SCheckbox>
                     <br />
                     <header>Tabs</header>
                     <STabs tab_key={0} tabs={[{ label: 'Tab 1' }, { label: 'Tab 2' }, { label: 'Tab 3' }]} onTabClick={(tab) => {}} />
@@ -87,7 +109,11 @@ export function App() {
                     <header>File Upload</header>
                     <SFlex>
                         <SFileUpload onFileUploaded={(file_content, file_name) => {}} render_button={<SButton>Upload Any</SButton>} />
-                        <SFileUpload accept_image onFileUploaded={(file_content, file_name) => {}} render_button={<SButton variant={'outline'}>Upload Image</SButton>} />
+                        <SFileUpload
+                            accept_image
+                            onFileUploaded={(file_content, file_name) => {}}
+                            render_button={<SButton variant={'outline'}>Upload Image</SButton>}
+                        />
                     </SFlex>
                     <br />
                     <header>Inputs</header>
