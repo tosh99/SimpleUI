@@ -16,6 +16,7 @@ import SSwiper from './base-components/s-swiper/s-swiper';
 import { STextarea } from './base-components/s-textarea/s-textarea';
 import { SToggle } from './base-components/s-toggle/s-toggle';
 import { STabs } from './base-components/s-tabs/s-tabs';
+import { SCheckbox } from './base-components/s-checkbox/s-checkbox';
 
 const options = [
     { label: 'Opt 1', value: 1 },
@@ -75,6 +76,10 @@ export function App() {
                         <SSkeletonLoader />
                         <SSkeletonLoader count={5} />
                     </SFlex>
+                    <br />
+                    <header>Checkbox</header>
+                    <SCheckbox checked={false} onChange={(checked) => console.log('Checkbox state:', checked)}>I am off checkbox</SCheckbox>
+                    <SCheckbox checked={true} onChange={(checked) => console.log('Checkbox state:', checked)}>I am on checkbox</SCheckbox>
                     <br />
                     <header>Tabs</header>
                     <STabs tab_key={0} tabs={[{ label: 'Tab 1' }, { label: 'Tab 2' }, { label: 'Tab 3' }]} onTabClick={(tab) => {}} />

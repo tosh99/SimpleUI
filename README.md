@@ -131,6 +131,18 @@ interface SBadgeProps {
 }
 ```
 
+### SCheckbox
+```typescript
+interface SCheckboxProps {
+  children: ReactNode;              // Checkbox label/content
+  width?: number | string;          // Container width
+  disabled?: boolean;               // Whether checkbox is disabled
+  checked?: boolean;                // Checked state of the checkbox
+  onChange?: (checked: boolean) => void; // Called when checkbox state changes
+  style?: CSSProperties;            // Additional inline styles
+}
+```
+
 ### SLoader
 ```typescript
 interface SLoaderProps {
