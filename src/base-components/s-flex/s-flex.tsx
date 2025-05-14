@@ -11,7 +11,7 @@ export function SFlex(props: SFlexProps) {
                 justifyContent: props.justify,
                 flexWrap: props.wrap ? 'wrap' : 'nowrap',
                 gap: props.gap,
-                width: props.width,
+                width: props.width || '100%',
                 height: props.height,
                 margin: props.margin,
                 marginTop: props.marginTop,

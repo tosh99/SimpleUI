@@ -3,13 +3,13 @@ import styles from './s-select.module.scss';
 import { useClickAway, useDebounce, useKeyPress } from 'ahooks';
 import { TbSelector } from 'react-icons/tb';
 import ClipLoader from "react-spinners/ClipLoader";
-import { nanoid } from 'nanoid';
+// UUID generation using the built-in Crypto API instead of nanoid
 
 // Global tracking for open select dropdown
 let OPEN_DROPDOWN_ID: string | null = null;
 
 export function SSelect(props: SSelectProps) {
-    const select_id = useRef<string>(nanoid());
+    const select_id = useRef<string>(crypto.randomUUID());
     const [is_open, set_is_open] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     

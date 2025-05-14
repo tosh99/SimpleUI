@@ -20,6 +20,7 @@ pnpm dev
 ## 🧩 Component Parameters
 
 ### SFlex
+**Description:** A flexible container component based on CSS Flexbox that simplifies layout management with intuitive props for controlling direction, alignment, spacing, and more.
 ```typescript
 interface SFlexProps {
   children?: ReactNode;               // Child elements to render
@@ -43,6 +44,7 @@ interface SFlexProps {
 ```
 
 ### SButton
+**Description:** A versatile button component that supports multiple variants, loading states, icons, and custom styling while maintaining accessibility.
 ```typescript
 interface SButtonProps {
   children: ReactNode;               // Button text/content
@@ -58,6 +60,7 @@ interface SButtonProps {
 ```
 
 ### SInput
+**Description:** A customizable input field with built-in debounce support for search operations, styling options, and accessibility features.
 ```typescript
 interface SInputProps {
   id?: string;                      // Input ID
@@ -78,6 +81,7 @@ interface SInputProps {
 ```
 
 ### STextarea
+**Description:** A flexible textarea component with customizable dimensions, styling options, and value change handling.
 ```typescript
 interface STextareaProps {
   id?: string;                      // Textarea ID
@@ -94,6 +98,7 @@ interface STextareaProps {
 ```
 
 ### SToggle
+**Description:** A toggle switch component that provides visual feedback for binary states with customizable on/off text labels.
 ```typescript
 interface SToggleProps {
   on_text?: string;                 // Text to display when toggle is on
@@ -104,6 +109,7 @@ interface SToggleProps {
 ```
 
 ### STabs
+**Description:** A tabbed interface component that manages tab selection and content display with customizable styling for both container and individual tabs.
 ```typescript
 interface STabsProps {
   tabs: STab[];                     // Array of tab items
@@ -120,6 +126,7 @@ interface STab {
 ```
 
 ### SBadge
+**Description:** A lightweight badge component for displaying status, counts, or labels with customizable styling including background color, text color, and borders.
 ```typescript
 interface SBadgeProps {
   children?: ReactNode;             // Badge content
@@ -132,6 +139,7 @@ interface SBadgeProps {
 ```
 
 ### SCheckbox
+**Description:** A checkbox component with customizable styling, disabled state handling, and callback support for state changes.
 ```typescript
 interface SCheckboxProps {
   children: ReactNode;              // Checkbox label/content
@@ -144,6 +152,7 @@ interface SCheckboxProps {
 ```
 
 ### SLoader
+**Description:** A simple, size-customizable loading indicator component for showing loading states in the application.
 ```typescript
 interface SLoaderProps {
   size?: number;                    // Size of the loader in pixels
@@ -151,6 +160,7 @@ interface SLoaderProps {
 ```
 
 ### SModal
+**Description:** A modal dialog component with customizable dimensions, header buttons, and title that manages its own visibility state and close operations.
 ```typescript
 interface SModalProps {
   children: ReactNode;              // Modal content
