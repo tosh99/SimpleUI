@@ -16,11 +16,6 @@
     "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
